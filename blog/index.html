@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diário — Júlia Cardoso | Branding, Direção Criativa e IA</title>
+<meta name="description" content="Diário de Júlia Cardoso. Reflexões sobre branding estratégico, direção criativa, IA aplicada ao design e atualizações de aplicativos." />
+<meta name="keywords" content="blog design, branding, direção criativa, IA design, blog Júlia Cardoso" />
+<meta name="author" content="Júlia Cardoso" />
+<link rel="canonical" href="https://juliacardoso.dsgn/blog/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Diário — Júlia Cardoso" />
+<meta property="og:description" content="Reflexões sobre branding, direção criativa e IA aplicada ao design." />
+<meta property="og:url" content="https://juliacardoso.dsgn/blog/" />
+<meta property="og:site_name" content="Júlia Cardoso" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Diário — Júlia Cardoso" />
+<meta name="twitter:description" content="Reflexões sobre branding, direção criativa e IA aplicada ao design." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Diário — Júlia Cardoso",
+  "url": "https://juliacardoso.dsgn/blog/",
+  "author": {
+    "@type": "Person",
+    "name": "Júlia Cardoso"
+  },
+  "description": "Reflexões sobre branding, direção criativa, IA e design."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://juliacardoso.dsgn/"},
+    {"@type": "ListItem", "position": 2, "name": "Diário", "item": "https://juliacardoso.dsgn/blog/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<style>
+  /* ===== HEADER ===== */
+  .blog-hero {
+    padding: 180px 48px 80px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    position: relative;
+  }
+  .blog-hero-inner { max-width: 1600px; margin: 0 auto; }
+  .blog-hero .crumbs { margin-bottom: 48px; }
+  .blog-hero h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 14vw, 260px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: #F5F5F5;
+    margin-bottom: 24px;
+  }
+  .blog-hero h1 .outline {
+    -webkit-text-stroke: 1px #F5F5F5;
+    color: transparent;
+  }
+  .blog-hero p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(16px, 1.4vw, 20px);
+    color: rgba(245, 245, 245, 0.7);
+    max-width: 580px;
+    line-height: 1.55;
+    margin-top: 32px;
+  }
+
+  /* ===== FILTERS ===== */
+  .filters {
+    padding: 48px 48px 0;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+  }
+  .filters-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-bottom: 28px;
+  }
+  .filter-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 18px;
+    border: 1px solid rgba(245, 245, 245, 0.3);
+    color: rgba(245, 245, 245, 0.7);
+    transition: all 0.2s ease;
+  }
+  .filter-btn:hover { border-color: #F5F5F5; color: #F5F5F5; }
+  .filter-btn.active {
+    background: #E63230;
+    border-color: #E63230;
+    color: #0A0A0A;
+  }
+
+  /* ===== LIST ===== */
+  .posts {
+    padding: 0 48px 160px;
+  }
+  .posts-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .post-row {
+    display: grid;
+    grid-template-columns: 100px 1.6fr 1fr 140px 60px;
+    gap: 32px;
+    padding: 56px 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    align-items: center;
+    position: relative;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+  }
+  .post-row::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: #E63230;
+    transition: width 0.25s ease;
+  }
+  .post-row:hover {
+    padding-left: 40px;
+    background: rgba(230, 50, 48, 0.03);
+  }
+  .post-row:hover::before { width: 2px; }
+  .post-row:hover .post-row-title { color: #E63230; }
+  .post-row:hover .post-row-arrow { color: #E63230; transform: translateX(8px); }
+
+  .post-row-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #E63230;
+    letter-spacing: 2px;
+  }
+  .post-row-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2.4vw, 38px);
+    color: #F5F5F5;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 0.2s ease;
+  }
+  .post-row-cat {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .post-row-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.4);
+    letter-spacing: 1px;
+    text-align: right;
+  }
+  .post-row-arrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(245, 245, 245, 0.3);
+    text-align: right;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  html:not(.js) .reveal { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  @media (max-width: 1200px) {
+    .blog-hero { padding: 160px 32px 64px; }
+    .filters { padding: 36px 32px 0; }
+    .posts { padding: 0 32px 140px; }
+  }
+  @media (max-width: 960px) {
+    .post-row {
+      grid-template-columns: 60px 1fr 120px;
+      grid-template-areas:
+        "num title title"
+        "num cat date";
+      column-gap: 20px;
+      row-gap: 8px;
+      padding: 36px 16px;
+    }
+    .post-row:hover { padding-left: 24px; }
+    .post-row-num { grid-area: num; align-self: start; padding-top: 6px; }
+    .post-row-title { grid-area: title; }
+    .post-row-cat { grid-area: cat; }
+    .post-row-meta { grid-area: date; }
+    .post-row-arrow { display: none; }
+  }
+  @media (max-width: 640px) {
+    .blog-hero { padding: 120px 20px 48px; }
+    .blog-hero .crumbs { margin-bottom: 32px; }
+    .filters { padding: 28px 20px 0; }
+    .posts { padding: 0 20px 100px; }
+    .post-row {
+      grid-template-columns: 36px 1fr;
+      grid-template-areas:
+        "num title"
+        "num cat"
+        "num date";
+      row-gap: 6px;
+      padding: 28px 0;
+    }
+    .post-row:hover { padding-left: 12px; }
+    .post-row-meta { text-align: left; }
+    .filter-btn { font-size: 10px; padding: 8px 14px; letter-spacing: 1.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav-brand" data-cursor="hover">JÚLIA CARDOSO</a>
+  <div class="nav-links">
+    <a href="../index.html#trabalhos" data-cursor="hover">trabalhos</a>
+    <a href="index.html" class="active" data-cursor="hover">diário</a>
+    <a href="../index.html#sobre" data-cursor="hover">sobre</a>
+    <a href="../index.html#contato" data-cursor="hover">contato</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="crumbs reveal">
+      <a href="../index.html" data-cursor="hover">INÍCIO</a>
+      <span class="sep">/</span>
+      <span>DIÁRIO</span>
+    </div>
+    <div class="label reveal" style="margin-bottom: 32px;">004 — DIÁRIO</div>
+    <h1 class="reveal">DIÁRIO<br/><span class="outline">DE BORDO</span></h1>
+    <p class="reveal">Reflexões sobre branding, direção criativa, IA aplicada ao design e bastidores dos projetos. Sem fórmula. Com método.</p>
+  </div>
+</header>
+
+<section class="filters">
+  <div class="filters-inner">
+    <button class="filter-btn active" data-filter="all" data-cursor="hover">TODOS</button>
+    <button class="filter-btn" data-filter="branding" data-cursor="hover">BRANDING</button>
+    <button class="filter-btn" data-filter="direcao" data-cursor="hover">DIREÇÃO CRIATIVA</button>
+    <button class="filter-btn" data-filter="ia" data-cursor="hover">IA APLICADA</button>
+    <button class="filter-btn" data-filter="apps" data-cursor="hover">APPS & FERRAMENTAS</button>
+  </div>
+</section>
+
+<main class="posts">
+  <div class="posts-inner">
+
+    <a href="post-branding-essencia.html" class="post-row reveal" data-cat="branding" data-cursor="hover">
+      <div class="post-row-num">N°01</div>
+      <div class="post-row-title">Por que sua marca não é o seu logotipo</div>
+      <div class="post-row-cat">BRANDING</div>
+      <div class="post-row-meta">04 MAI 2026 · 6 MIN</div>
+      <div class="post-row-arrow">→</div>
+    </a>
+
+    <a href="post-ia-direcao-criativa.html" class="post-row reveal" data-cat="ia" data-cursor="hover">
+      <div class="post-row-num">N°02</div>
+      <div class="post-row-title">IA não substitui direção criativa. Substitui execução repetitiva.</div>
+      <div class="post-row-cat">IA APLICADA</div>
+      <div class="post-row-meta">22 ABR 2026 · 8 MIN</div>
+      <div class="post-row-arrow">→</div>
+    </a>
+
+    <a href="post-direcao-criativa-redes.html" class="post-row reveal" data-cat="direcao" data-cursor="hover">
+      <div class="post-row-num">N°03</div>
+      <div class="post-row-title">Direção criativa para redes: estética não é estratégia</div>
+      <div class="post-row-cat">DIREÇÃO CRIATIVA</div>
+      <div class="post-row-meta">10 ABR 2026 · 5 MIN</div>
+      <div class="post-row-arrow">→</div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <span>© JÚLIA CARDOSO 2026</span>
+  <span>DIÁRIO — DESIGN. IDENTIDADE. DIREÇÃO.</span>
+</footer>
+
+<script src="blog.js"></script>
+</body>
+</html>

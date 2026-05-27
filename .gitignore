@@ -1,0 +1,5 @@
+# Debug files
+debug/
+
+# macOS
+.DS_Store

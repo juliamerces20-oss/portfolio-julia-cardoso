@@ -1,0 +1,2783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Júlia Cardoso — Diretora Criativa & Designer | Rio de Janeiro</title>
+<meta name="description" content="Júlia Cardoso — diretora criativa e designer no Rio de Janeiro. Identidade visual, branding estratégico, direção criativa para redes e sistemas com IA." />
+<meta name="keywords" content="diretora criativa, design, identidade visual, branding, direção criativa, IA design, Rio de Janeiro" />
+<meta name="author" content="Júlia Cardoso" />
+<link rel="canonical" href="https://juliacardoso.dsgn/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Júlia Cardoso — Diretora Criativa & Designer" />
+<meta property="og:description" content="Tradução do olhar e sentimento em identidade visual. Branding, direção criativa e sistemas com IA." />
+<meta property="og:url" content="https://juliacardoso.dsgn/" />
+<meta property="og:site_name" content="Júlia Cardoso" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Júlia Cardoso — Diretora Criativa & Designer" />
+<meta name="twitter:description" content="Tradução do olhar e sentimento em identidade visual." />
+
+<!-- JSON-LD: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Júlia Cardoso",
+  "jobTitle": "Diretora Criativa",
+  "url": "https://juliacardoso.dsgn/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio de Janeiro",
+    "addressCountry": "BR"
+  },
+  "knowsAbout": ["Branding", "Identidade Visual", "Direção Criativa", "Design com IA", "Edição de Vídeo"],
+  "sameAs": ["https://instagram.com/juliacardoso.dsgn"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&family=Abril+Fatface&family=Bungee&family=Caveat:wght@700&family=Major+Mono+Display&family=Playfair+Display:ital,wght@1,700;1,900&family=Press+Start+2P&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+  /* ===================== RESET & BASE ===================== */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #0A0A0A;
+    /* Hide scrollbar across browsers */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+  body {
+    background: #0A0A0A;
+    color: #F5F5F5;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: none;
+    transition: color 0.2s ease;
+  }
+
+  button {
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: none;
+  }
+
+  ::selection {
+    background: #E63230;
+    color: #0A0A0A;
+  }
+
+  /* ===================== UTILITIES ===================== */
+  .container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #E63230;
+  }
+
+  .hairline {
+    height: 1px;
+    width: 100%;
+    background: rgba(245, 245, 245, 0.15);
+    border: none;
+  }
+
+  /* ===================== CUSTOM CURSOR ===================== */
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+
+  .cursor-dot {
+    width: 10px;
+    height: 10px;
+    background: #E63230;
+  }
+
+  .cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E63230;
+    transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+  }
+
+  .cursor-ring.hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(230, 50, 48, 0.08);
+  }
+
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    a, button { cursor: pointer; }
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+
+  /* ===================== NAV ===================== */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: background 0.3s ease, padding 0.3s ease;
+  }
+
+  .nav.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 18px 48px;
+  }
+
+  .nav-copyright {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #F5F5F5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover {
+    color: #E63230;
+  }
+
+  /* ===================== HERO (FLOATING IMAGES + GIANT WORD) ===================== */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    background: #0A0A0A;
+    overflow: hidden;
+  }
+
+  /* CENTERED NAME BLOCK — anchors the composition in the middle.
+     No fixed width: the block grows with content and translate(-50%) centers it perfectly. */
+  .hero-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    text-align: center;
+    pointer-events: none;
+    max-width: 96vw;
+  }
+
+  .hero-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 7.5vw, 128px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #F5F5F5;
+    margin: 0;
+    user-select: none;
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+  }
+
+  .hero-tagline {
+    margin-top: 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(13px, 1.1vw, 16px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.75);
+  }
+
+  .hero-tagline span {
+    color: #E63230;
+    margin: 0 6px;
+  }
+
+  /* Top corner meta — supplements the nav */
+  .hero-meta {
+    position: absolute;
+    top: 140px;
+    left: 48px;
+    right: 48px;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    pointer-events: none;
+  }
+  .hero-meta-left,
+  .hero-meta-right {
+    pointer-events: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #F5F5F5;
+  }
+  .hero-meta-left {
+    max-width: 340px;
+    text-align: left;
+  }
+  .hero-meta-left .sub {
+    color: rgba(245, 245, 245, 0.4);
+    margin-top: 2px;
+  }
+  .hero-meta-right {
+    text-align: right;
+  }
+  .hero-meta-right .time {
+    color: rgba(245, 245, 245, 0.4);
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* FLOATING IMAGES LAYER */
+  .hero-floats {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-float {
+    position: absolute;
+    width: var(--w, 260px);
+    height: var(--h, 340px);
+    top: var(--top, 20%);
+    left: var(--left, 50%);
+    transform: translate(-50%, 0) scale(0.95);
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+    pointer-events: auto;
+    background: #1A1A1A;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .hero-float.active {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    animation: floatGently 7s ease-in-out infinite;
+  }
+  .hero-float image-slot {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    --slot-bg: #1A1A1A;
+    --slot-border: rgba(245, 245, 245, 0.1);
+  }
+  @keyframes floatGently {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -14px; }
+  }
+
+  /* Hide the nav background when over the hero so the design breathes */
+  .nav:not(.scrolled) {
+    color: #F5F5F5;
+  }
+
+  /* ===================== TICKER ===================== */
+  .ticker {
+    background: #E63230;
+    overflow: hidden;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #0A0A0A;
+    border-bottom: 1px solid #0A0A0A;
+  }
+
+  .ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 36s linear infinite;
+    will-change: transform;
+  }
+
+  .ticker-track span {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: #0A0A0A;
+    padding-right: 48px;
+    letter-spacing: -0.01em;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ===================== MÉTODO ===================== */
+  .method {
+    background: #0A0A0A;
+    padding: 160px 48px 140px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+  }
+  .method-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .method-header {
+    padding-bottom: 24px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+  }
+  .method-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 5.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: #F5F5F5;
+    max-width: 1300px;
+    margin-bottom: 100px;
+  }
+  .method-title em {
+    font-style: normal;
+    color: #E63230;
+  }
+  .method-list {
+    border-top: 1px solid rgba(245, 245, 245, 0.15);
+  }
+  .method-step {
+    display: grid;
+    grid-template-columns: 240px 1fr 1.4fr;
+    gap: 48px;
+    padding: 64px 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    align-items: start;
+    position: relative;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+  }
+  .method-step::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: #E63230;
+    transition: width 0.25s ease;
+  }
+  .method-step:hover {
+    background: rgba(230, 50, 48, 0.03);
+    padding-left: 40px;
+  }
+  .method-step:hover::before { width: 2px; }
+  .method-step:hover .method-step-name { color: #E63230; }
+
+  .method-step-num {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(64px, 7vw, 128px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #E63230;
+  }
+  .method-step-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: #F5F5F5;
+    transition: color 0.2s ease;
+    padding-top: 8px;
+  }
+  .method-step-name span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #E63230;
+  }
+  .method-step-body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.7);
+    padding-top: 12px;
+    max-width: 540px;
+  }
+
+  @media (max-width: 1100px) {
+    .method-step {
+      grid-template-columns: 160px 1fr 1.2fr;
+      gap: 32px;
+      padding: 48px 16px;
+    }
+  }
+  @media (max-width: 860px) {
+    .method { padding: 120px 32px; }
+    .method-step {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 40px 0;
+    }
+    .method-step:hover { padding-left: 16px; }
+    .method-step-name { padding-top: 0; }
+    .method-step-body { padding-top: 0; }
+  }
+  @media (max-width: 640px) {
+    .method { padding: 88px 20px; }
+    .method-title { margin-bottom: 56px; }
+  }
+
+  /* ===================== TRANSFORMAÇÃO ===================== */
+  .transform {
+    background: #0A0A0A;
+    padding: 160px 48px 140px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+  }
+  .transform-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .transform-header {
+    padding-bottom: 24px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+  }
+  .transform-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 5.5vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: #F5F5F5;
+    max-width: 1300px;
+    margin-bottom: 100px;
+  }
+  .transform-title em {
+    font-style: normal;
+    color: #E63230;
+  }
+  .transform-grid {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(245, 245, 245, 0.15);
+  }
+  .transform-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 48px 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    position: relative;
+  }
+  .transform-row::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: #E63230;
+    transition: width 0.25s ease;
+  }
+  .transform-row:hover {
+    background: rgba(230, 50, 48, 0.03);
+    padding-left: 40px;
+  }
+  .transform-row:hover::before { width: 2px; }
+  .transform-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: #E63230;
+    letter-spacing: 2px;
+    align-self: start;
+    padding-top: 8px;
+  }
+  .transform-before, .transform-after {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .transform-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.4);
+  }
+  .transform-after .transform-label {
+    color: #E63230;
+  }
+  .transform-before .transform-text {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 1.55vw, 24px);
+    line-height: 1.25;
+    color: rgba(245, 245, 245, 0.45);
+    letter-spacing: -0.01em;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(245, 245, 245, 0.25);
+  }
+  .transform-after .transform-text {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 1.8vw, 30px);
+    line-height: 1.2;
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+  }
+  .transform-arrow {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #E63230;
+    text-align: center;
+    align-self: center;
+  }
+  .transform-closer {
+    margin-top: 96px;
+    padding-top: 0;
+    border-top: none;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: clamp(24px, 2.6vw, 44px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #F5F5F5;
+    max-width: 1100px;
+  }
+  .transform-closer em {
+    font-style: normal;
+    color: #E63230;
+  }
+  .transform-closer .dim {
+    color: rgba(245, 245, 245, 0.4);
+  }
+
+  @media (max-width: 960px) {
+    .transform { padding: 120px 32px; }
+    .transform-row {
+      grid-template-columns: 50px 1fr;
+      grid-template-areas:
+        "num before"
+        "num arrow"
+        "num after";
+      gap: 16px;
+      padding: 32px 16px;
+    }
+    .transform-row:hover { padding-left: 24px; }
+    .transform-num { grid-area: num; }
+    .transform-before { grid-area: before; }
+    .transform-arrow {
+      grid-area: arrow;
+      text-align: left;
+      transform: rotate(90deg);
+      transform-origin: left center;
+      width: fit-content;
+      padding-left: 8px;
+    }
+    .transform-after { grid-area: after; }
+  }
+
+  @media (max-width: 640px) {
+    .transform { padding: 88px 20px; }
+    .transform-title { margin-bottom: 56px; }
+    .transform-closer { margin-top: 56px; padding-top: 32px; }
+  }
+
+  /* ===================== POSITIONING ===================== */
+  .positioning {
+    background: #0A0A0A;
+    padding: 160px 48px 120px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+  }
+
+  .positioning-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto;
+    gap: 48px;
+    align-items: stretch;
+  }
+
+  .positioning-header {
+    grid-column: 1 / -1;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+  }
+
+  .positioning-left {
+    position: sticky;
+    top: 120px;
+  }
+
+  .positioning-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #1A1A1A;
+  }
+
+  .positioning-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.12) contrast(1.02);
+    transition: filter 0.6s ease, transform 0.8s ease;
+  }
+
+  .positioning-portrait:hover img {
+    filter: grayscale(0) contrast(1.05);
+    transform: scale(1.02);
+  }
+
+  .positioning-portrait-caption {
+    margin-top: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(245, 245, 245, 0.45);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .positioning-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #E63230;
+  }
+
+  .positioning-statement {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.2vw, 36px);
+    line-height: 1.3;
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+  }
+
+  .positioning-statement em {
+    font-style: normal;
+    color: #E63230;
+  }
+
+  .positioning-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .positioning-body {
+    margin-top: 0;
+    max-width: 480px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.6);
+  }
+
+  /* ===================== SERVICES ===================== */
+  .services {
+    background: #0A0A0A;
+    padding: 140px 48px;
+  }
+
+  .services-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  .section-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #E63230;
+    padding-bottom: 18px;
+  }
+
+  .section-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(44px, 8vw, 144px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #F5F5F5;
+  }
+
+  .services-list {
+    border-top: 1px solid rgba(245, 245, 245, 0.15);
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: 80px 1fr 1.2fr 60px;
+    gap: 32px;
+    padding: 40px 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    align-items: center;
+    position: relative;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .service::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: #E63230;
+    transition: width 0.25s ease;
+  }
+
+  .service:hover {
+    padding-left: 40px;
+    background: rgba(230, 50, 48, 0.03);
+  }
+
+  .service:hover::before {
+    width: 2px;
+  }
+
+  .service:hover .service-name {
+    color: #E63230;
+  }
+
+  .service:hover .service-arrow {
+    color: #E63230;
+    transform: translateX(8px);
+  }
+
+  .service-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: #E63230;
+    letter-spacing: 2px;
+  }
+
+  .service-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.8vw, 28px);
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+
+  .service-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(245, 245, 245, 0.5);
+    max-width: 420px;
+  }
+
+  .service-arrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: rgba(245, 245, 245, 0.3);
+    text-align: right;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  /* ===================== CASES ===================== */
+  .cases {
+    background: #0A0A0A;
+    padding: 140px 48px 160px;
+  }
+
+  .cases-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 32px;
+  }
+
+  .case {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .case-mockup {
+    background: #1A1A1A;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+
+  .case-mockup image-slot,
+  .case-mockup .case-slot {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    --slot-bg: #1A1A1A;
+    --slot-border: rgba(245, 245, 245, 0.05);
+  }
+
+  .case:hover .case-mockup {
+    transform: scale(0.99);
+  }
+
+  .case-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+  }
+
+  .case-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 1.3vw, 20px);
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    transition: color 0.2s ease;
+    margin: 0;
+  }
+
+  .case-category {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.5);
+    letter-spacing: 1px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .case:hover .case-name {
+    color: #E63230;
+  }
+
+  /* ===================== ABOUT ===================== */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+  }
+
+  .about-left {
+    background: #0A0A0A;
+    padding: 120px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-left .label {
+    color: rgba(245, 245, 245, 0.4);
+    margin-bottom: 32px;
+  }
+
+  .about-name {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 5.5vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #F5F5F5;
+    margin-bottom: 40px;
+  }
+
+  .about-body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 245, 245, 0.8);
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+
+  .about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .about-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 14px;
+    border: 1px solid rgba(245, 245, 245, 0.6);
+    color: #F5F5F5;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .about-tag:hover {
+    background: #E63230;
+    border-color: #E63230;
+    color: #0A0A0A;
+  }
+
+  .about-right {
+    background: #E63230;
+    padding: 120px 64px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-right::after {
+    content: "✦";
+    position: absolute;
+    top: 64px;
+    right: 64px;
+    font-family: 'Unbounded', sans-serif;
+    color: #0A0A0A;
+    font-size: 24px;
+  }
+
+  .about-right-num {
+    position: absolute;
+    bottom: 64px;
+    right: 64px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #0A0A0A;
+  }
+
+  .about-shout {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(56px, 8vw, 160px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #0A0A0A;
+  }
+
+  .about-shout span {
+    display: block;
+  }
+
+  /* ===================== CTA ===================== */
+  .cta {
+    background: #0A0A0A;
+    padding: 180px 48px 160px;
+    text-align: center;
+    position: relative;
+  }
+
+  .cta-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .cta-label {
+    margin-bottom: 48px;
+  }
+
+  .cta-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 180px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #F5F5F5;
+  }
+
+  .cta-title .outline {
+    -webkit-text-stroke: 1px #F5F5F5;
+    color: transparent;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 80px;
+    background: #E63230;
+    color: #0A0A0A;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 22px 56px;
+    border: 1px solid #E63230;
+    transition: background 0.25s ease, color 0.25s ease;
+    position: relative;
+  }
+
+  .cta-button:hover {
+    background: #0A0A0A;
+    color: #E63230;
+  }
+
+  .cta-handle {
+    margin-top: 56px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    color: rgba(245, 245, 245, 0.4);
+    letter-spacing: 1px;
+  }
+
+  .cta-email {
+    margin-top: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #E63230;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .cta-email:hover {
+    border-bottom-color: #E63230;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer {
+    background: #0A0A0A;
+    padding: 120px 48px 32px;
+    border-top: 1px solid rgba(245, 245, 245, 0.12);
+  }
+  .footer-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .footer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+    align-items: start;
+  }
+  .footer-row:first-child {
+    padding-top: 0;
+  }
+  .footer-row.intro {
+    padding-bottom: 56px;
+  }
+  .footer-intro-text {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+    font-size: clamp(20px, 2.2vw, 36px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #F5F5F5;
+    max-width: 720px;
+  }
+  .footer-intro-text em {
+    font-style: normal;
+    color: #E63230;
+  }
+  .footer-intro-side {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.6);
+    max-width: 480px;
+  }
+  .footer-intro-side p + p {
+    margin-top: 14px;
+  }
+  .footer-intro-side a {
+    color: #F5F5F5;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.3);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .footer-intro-side a:hover {
+    color: #E63230;
+    border-bottom-color: #E63230;
+  }
+  .footer-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #F5F5F5;
+    letter-spacing: 0.3px;
+  }
+  .footer-content {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.55);
+  }
+  .footer-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .footer-content a {
+    color: rgba(245, 245, 245, 0.55);
+    transition: color 0.2s ease;
+  }
+  .footer-content a:hover {
+    color: #E63230;
+  }
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding-top: 32px;
+    align-items: start;
+  }
+  .footer-bottom-left {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: rgba(245, 245, 245, 0.4);
+    line-height: 1.5;
+  }
+  .footer-bottom-left .sub {
+    color: rgba(245, 245, 245, 0.3);
+    margin-top: 2px;
+  }
+  .footer-bottom-right {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #F5F5F5;
+    line-height: 1.5;
+  }
+  .footer-bottom-right .sub {
+    font-weight: 300;
+    color: rgba(245, 245, 245, 0.5);
+    margin-top: 2px;
+  }
+
+  @media (max-width: 860px) {
+    .footer { padding: 88px 32px 32px; }
+    .footer-row,
+    .footer-bottom {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .footer-row.intro { padding-bottom: 40px; }
+  }
+  @media (max-width: 640px) {
+    .footer { padding: 72px 20px 24px; }
+  }
+
+  /* legacy single-line footer overrides (deprecated styles kept harmless) */
+
+  /* ===================== WORK CATEGORIES ===================== */
+
+  /* shared section frame for the 3 new work sections */
+  .work-section {
+    background: #0A0A0A;
+    padding: 140px 48px;
+    border-top: 1px solid rgba(245, 245, 245, 0.08);
+  }
+  .work-section-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* ============ REELS ============ */
+  .reels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .reel-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease;
+  }
+  .reel-card:hover { transform: translateY(-6px); }
+
+  .reel-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #1A1A1A;
+    overflow: hidden;
+  }
+  .reel-frame image-slot,
+  .reel-frame .reel-slot {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+  .reel-frame::after {
+    content: "▶";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(10, 10, 10, 0.75);
+    color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 5;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .reel-card:hover .reel-frame::after {
+    background: #E63230;
+    color: #0A0A0A;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .reel-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    background: rgba(10, 10, 10, 0.75);
+    color: #F5F5F5;
+    z-index: 4;
+  }
+  .reel-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .reel-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 1.1vw, 16px);
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    flex: 1;
+  }
+  .reel-views {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: #E63230;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .reel-client {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: rgba(245, 245, 245, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ============ SOCIAL POSTS ============ */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.3s ease;
+  }
+  .post-card:hover { transform: translateY(-4px); }
+  .post-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #1A1A1A;
+    position: relative;
+    overflow: hidden;
+  }
+  .post-frame image-slot,
+  .post-frame .post-slot {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+  .post-frame-meta {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    background: rgba(10, 10, 10, 0.75);
+    color: #F5F5F5;
+    z-index: 4;
+  }
+  .post-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-top: 4px;
+  }
+  .post-info-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.8);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    flex: 1;
+  }
+  .post-info-engagement {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: #E63230;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  /* ============ AI SYSTEMS ============ */
+  .systems-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 24px;
+  }
+  .system-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+    border: 1px solid rgba(245, 245, 245, 0.12);
+    background: #0F0F0F;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    position: relative;
+  }
+  .system-card:hover {
+    border-color: #E63230;
+    background: #131313;
+  }
+  .system-card:hover .system-card-title {
+    color: #E63230;
+  }
+  .system-card:hover .system-arrow {
+    color: #E63230;
+    transform: translate(4px, -4px);
+  }
+
+  .system-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #1A1A1A;
+    position: relative;
+    overflow: hidden;
+  }
+  .system-frame image-slot,
+  .system-frame .system-slot {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+  .system-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .system-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #E63230;
+    padding: 6px 10px;
+    border: 1px solid #E63230;
+  }
+  .system-arrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: rgba(245, 245, 245, 0.4);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .system-card-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 1.8vw, 26px);
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    transition: color 0.2s ease;
+  }
+  .system-card-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(245, 245, 245, 0.6);
+  }
+  .system-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(245, 245, 245, 0.08);
+  }
+  .system-stack span {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.5);
+    padding: 5px 9px;
+    border: 1px solid rgba(245, 245, 245, 0.15);
+  }
+
+  /* image-slot generic styling overrides */
+  image-slot {
+    --slot-bg: transparent;
+    --slot-border: transparent;
+  }
+
+  @media (max-width: 1200px) {
+    .work-section { padding: 120px 32px; }
+    .reels-grid { gap: 20px; }
+    .posts-grid { gap: 20px; }
+  }
+  @media (max-width: 960px) {
+    .reels-grid { grid-template-columns: repeat(3, 1fr); }
+    .systems-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .reels-grid { grid-template-columns: repeat(2, 1fr); }
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .work-section { padding: 88px 20px; }
+    .reels-grid { gap: 16px; }
+    .posts-grid { gap: 16px; }
+    .system-card { padding: 24px; }
+  }
+  @media (max-width: 420px) {
+    .reels-grid { grid-template-columns: 1fr 1fr; }
+    .posts-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ===================== DIÁRIO (BLOG) ===================== */
+  .diario {
+    background: #0A0A0A;
+    padding: 140px 48px;
+    border-top: 1px solid rgba(245, 245, 245, 0.1);
+    border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+  }
+
+  .diario-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .diario-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    margin-bottom: 80px;
+    gap: 24px;
+  }
+
+  .diario-title-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  .diario-all {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #E63230;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E63230;
+    transition: gap 0.2s ease, letter-spacing 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .diario-all:hover {
+    gap: 18px;
+  }
+
+  .diario-list {
+    border-top: 1px solid rgba(245, 245, 245, 0.15);
+  }
+
+  .diario-post {
+    display: grid;
+    grid-template-columns: 80px 1.4fr 1fr 120px 60px;
+    gap: 32px;
+    padding: 40px 24px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+    align-items: center;
+    position: relative;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .diario-post::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: #E63230;
+    transition: width 0.25s ease;
+  }
+
+  .diario-post:hover {
+    padding-left: 40px;
+    background: rgba(230, 50, 48, 0.03);
+  }
+
+  .diario-post:hover::before { width: 2px; }
+  .diario-post:hover .diario-post-title { color: #E63230; }
+  .diario-post:hover .diario-arrow { color: #E63230; transform: translateX(8px); }
+
+  .diario-post-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    color: #E63230;
+    letter-spacing: 2px;
+  }
+
+  .diario-post-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.6vw, 24px);
+    color: #F5F5F5;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    transition: color 0.2s ease;
+  }
+
+  .diario-post-cat {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .diario-post-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(245, 245, 245, 0.4);
+    letter-spacing: 1px;
+    text-align: right;
+  }
+
+  .diario-arrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: rgba(245, 245, 245, 0.3);
+    text-align: right;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  @media (max-width: 960px) {
+    .diario { padding: 120px 32px; }
+    .diario-post {
+      grid-template-columns: 50px 1fr 100px;
+      grid-template-areas:
+        "num title title"
+        "num cat date";
+      column-gap: 20px;
+      row-gap: 8px;
+      padding: 28px 16px;
+    }
+    .diario-post:hover { padding-left: 24px; }
+    .diario-post-num { grid-area: num; }
+    .diario-post-title { grid-area: title; }
+    .diario-post-cat { grid-area: cat; }
+    .diario-post-meta { grid-area: date; }
+    .diario-arrow { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .diario { padding: 88px 20px; }
+    .diario-header {
+      grid-template-columns: 1fr;
+      margin-bottom: 48px;
+    }
+    .diario-all { padding-bottom: 8px; }
+    .diario-post {
+      grid-template-columns: 36px 1fr;
+      grid-template-areas:
+        "num title"
+        "num cat"
+        "num date";
+      row-gap: 4px;
+    }
+    .diario-post:hover { padding-left: 16px; }
+    .diario-post-meta { text-align: left; }
+  }
+
+  /* ===================== ENTRY ANIMATIONS =====================
+     Content is visible by default. The .js class on <html> opts in to
+     hidden-then-revealed animations. Without JS, no FOUC, no blank page. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .js .hero-image,
+  .js .hero-top,
+  .js .hero-center .word,
+  .js .hero-center .sep,
+  .js .hero-bottom > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroIn 0.9s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+  }
+  .js .hero-image { transform: none; animation-name: heroFadeIn; animation-duration: 1.2s; }
+  .js .hero-top { animation-delay: 0.25s; }
+  .js .hero-center .word:nth-child(1) { animation-delay: 0.45s; }
+  .js .hero-center .sep { animation-delay: 0.6s; animation-name: heroSepIn; transform: scaleX(0); transform-origin: left; }
+  .js .hero-center .word:nth-child(3) { animation-delay: 0.75s; }
+  .js .hero-bottom > *:nth-child(1) { animation-delay: 0.9s; }
+  .js .hero-bottom > *:nth-child(2) { animation-delay: 1s; }
+
+  @keyframes heroFadeIn { to { opacity: 1; } }
+  @keyframes heroSepIn { to { opacity: 1; transform: scaleX(1); } }
+
+  .js .hero-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroIn 0.9s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+  }
+
+  .js .hero-stagger > *:nth-child(1) { animation-delay: 0.15s; }
+  .js .hero-stagger > *:nth-child(2) { animation-delay: 0.30s; }
+  .js .hero-stagger > *:nth-child(3) { animation-delay: 0.45s; }
+  .js .hero-stagger > *:nth-child(4) { animation-delay: 0.60s; }
+
+  @keyframes heroIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .js .hero-marker {
+    transform: translateY(-50%) scaleY(0);
+    transform-origin: top;
+    animation: markerIn 0.8s cubic-bezier(0.2, 0.6, 0.2, 1) 0.05s forwards;
+  }
+
+  @keyframes markerIn {
+    to { transform: translateY(-50%) scaleY(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal,
+    .js .hero-stagger > *,
+    .js .hero-marker {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+    .ticker-track { animation: none !important; }
+    html { scroll-behavior: auto !important; }
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+
+  /* Tablet / small desktop ≤ 1200px */
+  @media (max-width: 1200px) {
+    .nav { padding: 24px 32px; }
+    .nav.scrolled { padding: 16px 32px; }
+    .hero { padding: 110px 32px 80px; }
+    .positioning, .services, .cases, .cta { padding-left: 32px; padding-right: 32px; }
+    .footer { padding: 28px 32px; }
+
+    .hero-marker { left: -16px; display: none; }
+
+    .service {
+      grid-template-columns: 60px 1fr 1fr 40px;
+      gap: 24px;
+    }
+  }
+
+  /* Tablet ≤ 960px — major layout collapses */
+  @media (max-width: 960px) {
+    .positioning {
+      padding-top: 120px;
+      padding-bottom: 100px;
+    }
+    .positioning-inner {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .positioning-left { position: static; }
+    .positioning-body { margin-top: 32px; max-width: 100%; }
+
+    .services { padding-top: 120px; padding-bottom: 120px; }
+
+    .cases { padding-top: 120px; padding-bottom: 140px; }
+    .cases-grid { gap: 64px 24px; }
+
+    .about {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .about-left, .about-right {
+      padding: 96px 32px;
+    }
+
+    .about-right { min-height: 60vh; }
+
+    .cta { padding: 140px 32px; }
+
+    .section-header { margin-bottom: 64px; }
+  }
+
+  /* Hide secondary nav links on narrow screens to fit */
+  @media (max-width: 820px) {
+    .nav-links a[href="#reels"],
+    .nav-links a[href="#posts"],
+    .nav-links a[href="#sistemas"] {
+      display: none;
+    }
+  }
+
+  /* Mobile ≤ 640px */
+  @media (max-width: 640px) {
+    .nav { padding: 18px 20px; }
+    .nav.scrolled { padding: 14px 20px; }
+    .nav-copyright { display: none; }
+    .nav-links { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { font-size: 11px; }
+
+    .hero {
+      min-height: 100svh;
+      height: 100svh;
+      padding: 0;
+    }
+    .hero-meta {
+      top: 96px;
+      left: 20px;
+      right: 20px;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-meta-left,
+    .hero-meta-right {
+      font-size: 11px;
+      max-width: 100%;
+    }
+    .hero-meta-right { text-align: left; }
+    .hero-name {
+      font-size: clamp(32px, 11vw, 72px);
+    }
+    .hero-tagline {
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin-top: 16px;
+    }
+    .hero-float {
+      width: clamp(160px, 50vw, 220px) !important;
+      height: clamp(220px, 65vw, 300px) !important;
+    }
+    .hero-floats > .hero-float { --top: 28% !important; --left: 50% !important; }
+    .hero-corner {
+      display: none;
+    }
+    .hero-label { margin-bottom: 24px; }
+
+    .ticker { height: 48px; }
+    .ticker-track span { font-size: 16px; padding-right: 32px; }
+
+    .positioning {
+      padding: 88px 20px 72px;
+    }
+    .positioning-body { font-size: 15px; }
+
+    .services { padding: 88px 20px 88px; }
+    .section-header { margin-bottom: 48px; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+
+    .service {
+      grid-template-columns: 36px 1fr;
+      grid-template-areas:
+        "num name"
+        "num desc";
+      column-gap: 16px;
+      row-gap: 6px;
+      padding: 24px 0;
+    }
+    .service:hover { padding-left: 16px; }
+    .service-num { grid-area: num; padding-top: 6px; }
+    .service-name { grid-area: name; }
+    .service-desc { grid-area: desc; max-width: 100%; }
+    .service-arrow { display: none; }
+
+    .cases { padding: 88px 20px 112px; }
+    .cases-grid { grid-template-columns: 1fr; gap: 56px; }
+    .case-mockup { aspect-ratio: 4 / 3; }
+
+    .about-left, .about-right { padding: 80px 20px; }
+    .about-body { font-size: 15px; max-width: 100%; }
+    .about-tag { font-size: 10px; padding: 7px 12px; }
+    .about-right::after { top: 24px; right: 24px; font-size: 18px; }
+    .about-right-num { bottom: 24px; right: 24px; font-size: 10px; letter-spacing: 3px; }
+
+    .cta { padding: 112px 20px 112px; }
+    .cta-button { margin-top: 56px; padding: 18px 32px; font-size: 12px; letter-spacing: 2px; }
+    .cta-handle { margin-top: 40px; font-size: 12px; }
+    .cta-email { font-size: 15px; }
+
+    .footer {
+      padding: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .footer span { font-size: 10px; }
+  }
+
+  /* Very small ≤ 380px */
+  @media (max-width: 380px) {
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 11px; }
+    .hero-label { letter-spacing: 2px; font-size: 10px; }
+    .label { letter-spacing: 2px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-copyright">© 2025</div>
+  <div class="nav-links">
+    <a href="#trabalhos" data-cursor="hover">trabalhos</a>
+    <a href="#reels" data-cursor="hover">reels</a>
+    <a href="#posts" data-cursor="hover">posts</a>
+    <a href="#sistemas" data-cursor="hover">ia</a>
+    <a href="#diario" data-cursor="hover">diário</a>
+    <a href="#contato" data-cursor="hover">contato</a>
+  </div>
+</nav>
+
+<!-- 01 — HERO -->
+<section class="hero" id="hero" data-screen-label="01 Hero" style="text-align: center">
+
+  <!-- top corner meta -->
+  <div class="hero-meta">
+    <div class="hero-meta-left">
+      Prática de design por Júlia Cardoso
+      <div class="sub">diretora criativa brasileira</div>
+    </div>
+    <div class="hero-meta-right">
+      Rio de Janeiro
+      <div class="time" id="heroClock">— : —</div>
+    </div>
+  </div>
+
+  <!-- floating image slots — user drags images in; JS cycles which is visible -->
+  <div class="hero-floats" id="heroFloats">
+    <div class="hero-float" style="--top: 14%;  --left: 14%; --w: 220px; --h: 300px;">
+      <image-slot id="hero-float-1" placeholder="Projeto 01" shape="rect"></image-slot>
+    </div>
+    <div class="hero-float" style="--top: 60%;  --left: 12%; --w: 240px; --h: 320px;">
+      <image-slot id="hero-float-2" placeholder="Projeto 02" shape="rect"></image-slot>
+    </div>
+    <div class="hero-float" style="--top: 18%;  --left: 80%; --w: 220px; --h: 300px;">
+      <image-slot id="hero-float-3" placeholder="Projeto 03" shape="rect"></image-slot>
+    </div>
+    <div class="hero-float" style="--top: 62%;  --left: 82%; --w: 240px; --h: 320px;">
+      <image-slot id="hero-float-4" placeholder="Projeto 04" shape="rect"></image-slot>
+    </div>
+    <div class="hero-float" style="--top: 12%;  --left: 50%; --w: 220px; --h: 300px;">
+      <image-slot id="hero-float-5" placeholder="Projeto 05" shape="rect"></image-slot>
+    </div>
+  </div>
+
+  <!-- CENTERED NAME + TAGLINE -->
+  <div class="hero-center">
+    <h1 class="hero-name">JÚLIA CARDOSO</h1>
+    <div class="hero-tagline">
+      Diretora Criativa <span>—</span> Marca &amp; Identidade
+    </div>
+  </div>
+
+</section>
+
+<!-- 02 — TICKER -->
+<section class="ticker" aria-hidden="true" data-screen-label="02 Ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <!-- duplicated for seamless loop -->
+    <span>IDENTIDADE VISUAL ✦ DIREÇÃO CRIATIVA ✦ EDIÇÃO DE VÍDEO ✦ SISTEMAS COM IA ✦ BRANDING ESTRATÉGICO ✦&nbsp;</span>
+    <span>IDENTIDADE VISUAL ✦ DIREÇÃO CRIATIVA ✦ EDIÇÃO DE VÍDEO ✦ SISTEMAS COM IA ✦ BRANDING ESTRATÉGICO ✦&nbsp;</span>
+  </div>
+</section>
+
+<!-- 03 — POSITIONING -->
+<section class="positioning" data-screen-label="03 Posicionamento">
+  <div class="positioning-inner">
+    <div class="positioning-header reveal">
+      <div class="positioning-num">001 — QUEM SOU</div>
+    </div>
+    <div class="positioning-left reveal">
+      <figure class="positioning-portrait">
+        <img src="assets/julia-cardoso-portrait.png" alt="Retrato de Júlia Cardoso" loading="lazy" />
+      </figure>
+    </div>
+    <div class="positioning-right">
+      <p class="positioning-statement reveal">
+        A diretora criativa que traduz o que o cliente <em>sente</em> em identidade que o mundo <em>enxerga</em>.
+      </p>
+      <p class="positioning-body reveal">
+        Não executo por executar. Escuto, interpreto e construo de trás pra frente. Quem chega aqui carregando a dor de "ninguém me entendeu" finalmente vai se ver no resultado.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — TRANSFORMAÇÃO -->
+<section class="transform" data-screen-label="04 Transformação">
+  <div class="transform-inner">
+    <div class="transform-header reveal">
+      <div class="positioning-num">002 — TRANSFORMAÇÃO</div>
+    </div>
+
+    <h2 class="transform-title reveal">
+      Do que você <em>sente</em><br/>ao que o mundo <em>enxerga</em>.
+    </h2>
+
+    <div class="transform-grid">
+      <div class="transform-row reveal">
+        <div class="transform-num">01</div>
+        <div class="transform-before">
+          <div class="transform-label">Antes</div>
+          <div class="transform-text">Marca que se confunde com mais dez do mesmo nicho.</div>
+        </div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">
+          <div class="transform-label">Depois</div>
+          <div class="transform-text">Identidade que só você poderia ter assinado.</div>
+        </div>
+      </div>
+
+      <div class="transform-row reveal">
+        <div class="transform-num">02</div>
+        <div class="transform-before">
+          <div class="transform-label">Antes</div>
+          <div class="transform-text">Conteúdo postado por obrigação, sem retorno.</div>
+        </div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">
+          <div class="transform-label">Depois</div>
+          <div class="transform-text">Posicionamento que constrói autoridade real.</div>
+        </div>
+      </div>
+
+      <div class="transform-row reveal">
+        <div class="transform-num">03</div>
+        <div class="transform-before">
+          <div class="transform-label">Antes</div>
+          <div class="transform-text">Estética da moda, alma terceirizada.</div>
+        </div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">
+          <div class="transform-label">Depois</div>
+          <div class="transform-text">Sistema visual que carrega a sua voz.</div>
+        </div>
+      </div>
+
+      <div class="transform-row reveal">
+        <div class="transform-num">04</div>
+        <div class="transform-before">
+          <div class="transform-label">Antes</div>
+          <div class="transform-text">Esforço sem direção, processo que não escala.</div>
+        </div>
+        <div class="transform-arrow">→</div>
+        <div class="transform-after">
+          <div class="transform-label">Depois</div>
+          <div class="transform-text">Sistema que cresce sem perder a essência.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="transform-closer reveal">
+      <span class="dim">A transformação não está no logo bonito, no feed organizado ou na tipografia da moda.</span> Está em finalmente ser <em>entendida</em> — e ser vista exatamente como você é.
+    </p>
+  </div>
+</section>
+
+<!-- 05 — MÉTODO -->
+<section class="method" data-screen-label="05 Método">
+  <div class="method-inner">
+    <div class="method-header reveal">
+      <div class="positioning-num">003 — MÉTODO</div>
+    </div>
+
+    <h2 class="method-title reveal">
+      Construído<br/><em>de trás pra frente.</em>
+    </h2>
+
+    <div class="method-list">
+      <div class="method-step reveal">
+        <div class="method-step-num">01</div>
+        <div class="method-step-name">
+          Escuta
+          <span>Imersão inicial</span>
+        </div>
+        <div class="method-step-body">
+          Antes de qualquer ideia, sentar e ouvir. Entender o que você sente — não só o que pede. Identificar onde mora a verdade da marca e onde ela vem sendo traída.
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">02</div>
+        <div class="method-step-name">
+          Tradução
+          <span>Direção estratégica</span>
+        </div>
+        <div class="method-step-body">
+          Transformar a escuta em direção. Territórios, tom de voz, eixo estratégico: definir o que essa marca pode ser que nenhuma outra é.
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">03</div>
+        <div class="method-step-name">
+          Construção
+          <span>Sistema visual</span>
+        </div>
+        <div class="method-step-body">
+          Identidade, sistema, manifesto e aplicações — tudo derivado da tradução. Nada que pareça enxertado de outro lugar, nada que você não consiga defender.
+        </div>
+      </div>
+
+      <div class="method-step reveal">
+        <div class="method-step-num">04</div>
+        <div class="method-step-name">
+          Entrega
+          <span>Autonomia</span>
+        </div>
+        <div class="method-step-body">
+          Manual, arquivos vivos e diretrizes práticas. Algo que sobrevive sem mim — porque uma marca boa se mantém de pé sozinha.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — SERVICES -->
+<section class="services" data-screen-label="06 Serviços">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-num reveal">004</div>
+      <h2 class="section-title reveal">SERVIÇOS</h2>
+    </div>
+
+    <div class="services-list">
+      <a href="#contato" class="service reveal" data-cursor="hover">
+        <div class="service-num">01</div>
+        <div class="service-name">IDENTIDADE VISUAL</div>
+        <div class="service-desc">Construída a partir da essência. Não de tendências.</div>
+        <div class="service-arrow">→</div>
+      </a>
+      <a href="#contato" class="service reveal" data-cursor="hover">
+        <div class="service-num">02</div>
+        <div class="service-name">DIREÇÃO CRIATIVA PARA REDES</div>
+        <div class="service-desc">Posicionamento que constrói autoridade, não só estética.</div>
+        <div class="service-arrow">→</div>
+      </a>
+      <a href="#contato" class="service reveal" data-cursor="hover">
+        <div class="service-num">03</div>
+        <div class="service-name">SISTEMAS COM IA</div>
+        <div class="service-desc">Tecnologia a serviço da marca. Escala sem perder alma.</div>
+        <div class="service-arrow">→</div>
+      </a>
+      <a href="#contato" class="service reveal" data-cursor="hover">
+        <div class="service-num">04</div>
+        <div class="service-name">EDIÇÃO DE VÍDEO</div>
+        <div class="service-desc">Narrativa visual. Vídeo que parece que foi feito pra você.</div>
+        <div class="service-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — CASES (BRANDING) -->
+<section class="cases" id="trabalhos" data-screen-label="05 Branding">
+  <div class="cases-inner">
+    <div class="section-header">
+      <div class="section-num reveal">005 — BRANDING &amp; IDENTIDADE</div>
+    </div>
+    <h2 class="section-title reveal" style="margin-bottom: 100px;">CASES DE MARCA</h2>
+
+    <div class="cases-grid">
+
+      <article class="case reveal" data-cursor="hover">
+        <div class="case-mockup">
+          <image-slot id="case-1" placeholder="Projeto 01" shape="rect" class="case-slot"></image-slot>
+        </div>
+        <div class="case-caption">
+          <h3 class="case-name">Ateliê Nuvem de Chumbo</h3>
+          <div class="case-category">Identidade Visual, Direção de Arte</div>
+        </div>
+      </article>
+
+      <article class="case reveal" data-cursor="hover">
+        <div class="case-mockup">
+          <image-slot id="case-2" placeholder="Projeto 02" shape="rect" class="case-slot"></image-slot>
+        </div>
+        <div class="case-caption">
+          <h3 class="case-name">Raiz.</h3>
+          <div class="case-category">Sistema Editorial, Conteúdo</div>
+        </div>
+      </article>
+
+      <article class="case reveal" data-cursor="hover">
+        <div class="case-mockup">
+          <image-slot id="case-3" placeholder="Projeto 03" shape="rect" class="case-slot"></image-slot>
+        </div>
+        <div class="case-caption">
+          <h3 class="case-name">Casa Ofício</h3>
+          <div class="case-category">Branding, Audiovisual</div>
+        </div>
+      </article>
+
+      <article class="case reveal" data-cursor="hover">
+        <div class="case-mockup">
+          <image-slot id="case-4" placeholder="Projeto 04" shape="rect" class="case-slot"></image-slot>
+        </div>
+        <div class="case-caption">
+          <h3 class="case-name">Em produção</h3>
+          <div class="case-category">Em breve</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 06 — REELS -->
+<section class="work-section" id="reels" data-screen-label="06 Reels">
+  <div class="work-section-inner">
+    <div class="section-header">
+      <div class="section-num reveal">006 — AUDIOVISUAL</div>
+      <h2 class="section-title reveal">REELS</h2>
+    </div>
+
+    <div class="reels-grid">
+      <div class="reel-card reveal" data-cursor="hover">
+        <div class="reel-frame">
+          <span class="reel-badge">CASA OFÍCIO</span>
+          <image-slot id="reel-1" placeholder="Vídeo 9:16 — arraste o reel aqui" shape="rect" class="reel-slot"></image-slot>
+        </div>
+        <div class="reel-meta">
+          <div>
+            <div class="reel-title">Manifesto de marca</div>
+            <div class="reel-client">CASA OFÍCIO</div>
+          </div>
+          <div class="reel-views">124K</div>
+        </div>
+      </div>
+
+      <div class="reel-card reveal" data-cursor="hover">
+        <div class="reel-frame">
+          <span class="reel-badge">RAIZ.</span>
+          <image-slot id="reel-2" placeholder="Vídeo 9:16 — arraste o reel aqui" shape="rect" class="reel-slot"></image-slot>
+        </div>
+        <div class="reel-meta">
+          <div>
+            <div class="reel-title">Lançamento sistema editorial</div>
+            <div class="reel-client">RAIZ.</div>
+          </div>
+          <div class="reel-views">86K</div>
+        </div>
+      </div>
+
+      <div class="reel-card reveal" data-cursor="hover">
+        <div class="reel-frame">
+          <span class="reel-badge">NUVEM</span>
+          <image-slot id="reel-3" placeholder="Vídeo 9:16 — arraste o reel aqui" shape="rect" class="reel-slot"></image-slot>
+        </div>
+        <div class="reel-meta">
+          <div>
+            <div class="reel-title">Bastidor da nova identidade</div>
+            <div class="reel-client">ATELIÊ NUVEM</div>
+          </div>
+          <div class="reel-views">42K</div>
+        </div>
+      </div>
+
+      <div class="reel-card reveal" data-cursor="hover">
+        <div class="reel-frame">
+          <span class="reel-badge">EM EDIÇÃO</span>
+          <image-slot id="reel-4" placeholder="Vídeo 9:16 — arraste o reel aqui" shape="rect" class="reel-slot"></image-slot>
+        </div>
+        <div class="reel-meta">
+          <div>
+            <div class="reel-title">Próximo lançamento</div>
+            <div class="reel-client">EM BREVE</div>
+          </div>
+          <div class="reel-views">SOON</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 — SOCIAL POSTS -->
+<section class="work-section" id="posts" data-screen-label="07 Posts">
+  <div class="work-section-inner">
+    <div class="section-header">
+      <div class="section-num reveal">007 — REDES SOCIAIS</div>
+      <h2 class="section-title reveal">POSTS</h2>
+    </div>
+
+    <div class="posts-grid">
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-1" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">CARROSSEL · 8</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"Como nasce uma identidade"</div>
+          <div class="post-info-engagement">12K · ❤︎</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-2" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">FEED</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"Estética não é estratégia"</div>
+          <div class="post-info-engagement">8.4K · ❤︎</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-3" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">CARROSSEL · 5</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"3 erros de quem começa branding"</div>
+          <div class="post-info-engagement">15K · ❤︎</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-4" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">FEED</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"Manifesto Casa Ofício"</div>
+          <div class="post-info-engagement">6.2K · ❤︎</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-5" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">CARROSSEL · 6</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"O que faz uma diretora criativa"</div>
+          <div class="post-info-engagement">22K · ❤︎</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <image-slot id="post-6" placeholder="Post 1:1 — arraste aqui" shape="rect" class="post-slot"></image-slot>
+          <span class="post-frame-meta">FEED</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">"Próximo case — em breve"</div>
+          <div class="post-info-engagement">SOON</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 — AI SYSTEMS -->
+<section class="work-section" id="sistemas" data-screen-label="08 Sistemas com IA">
+  <div class="work-section-inner">
+    <div class="section-header">
+      <div class="section-num reveal">008 — IA APLICADA</div>
+      <h2 class="section-title reveal">SISTEMAS<br/>COM IA</h2>
+    </div>
+
+    <div class="systems-grid">
+      <article class="system-card reveal" data-cursor="hover">
+        <div class="system-frame">
+          <image-slot id="sys-1" placeholder="Screenshot do sistema — arraste aqui" shape="rect" class="system-slot"></image-slot>
+        </div>
+        <div class="system-header">
+          <span class="system-tag">FERRAMENTA INTERNA</span>
+          <span class="system-arrow">↗</span>
+        </div>
+        <h3 class="system-card-title">Atelier Brief — gerador de briefing por escuta</h3>
+        <p class="system-card-desc">Sistema que transforma transcrições de reuniões com clientes em briefings estruturados. Identifica posicionamento, pilares e contradições — o que sobra é direção criativa.</p>
+        <div class="system-stack">
+          <span>CLAUDE</span>
+          <span>WHISPER</span>
+          <span>NOTION API</span>
+        </div>
+      </article>
+
+      <article class="system-card reveal" data-cursor="hover">
+        <div class="system-frame">
+          <image-slot id="sys-2" placeholder="Screenshot do sistema — arraste aqui" shape="rect" class="system-slot"></image-slot>
+        </div>
+        <div class="system-header">
+          <span class="system-tag">SISTEMA DE CLIENTE</span>
+          <span class="system-arrow">↗</span>
+        </div>
+        <h3 class="system-card-title">Mood engine — referências sob direção</h3>
+        <p class="system-card-desc">Gerador de mood boards com restrição. Recebe a tese de marca, devolve 4 territórios visuais defensáveis em vez de mil opções aleatórias.</p>
+        <div class="system-stack">
+          <span>MIDJOURNEY</span>
+          <span>FIGMA API</span>
+          <span>PROMPTING</span>
+        </div>
+      </article>
+
+      <article class="system-card reveal" data-cursor="hover">
+        <div class="system-frame">
+          <image-slot id="sys-3" placeholder="Screenshot do sistema — arraste aqui" shape="rect" class="system-slot"></image-slot>
+        </div>
+        <div class="system-header">
+          <span class="system-tag">AUTOMAÇÃO</span>
+          <span class="system-arrow">↗</span>
+        </div>
+        <h3 class="system-card-title">Voz de marca — escritor com restrição</h3>
+        <p class="system-card-desc">Assistente que escreve copy mantendo a voz de cada cliente. Treinado em manifesto, posts antigos e respostas reais. Não inventa tom — preserva o que já existe.</p>
+        <div class="system-stack">
+          <span>CLAUDE</span>
+          <span>RAG</span>
+          <span>FINE-TUNE</span>
+        </div>
+      </article>
+
+      <article class="system-card reveal" data-cursor="hover">
+        <div class="system-frame">
+          <image-slot id="sys-4" placeholder="Screenshot do sistema — arraste aqui" shape="rect" class="system-slot"></image-slot>
+        </div>
+        <div class="system-header">
+          <span class="system-tag">EM CONSTRUÇÃO</span>
+          <span class="system-arrow">↗</span>
+        </div>
+        <h3 class="system-card-title">Próximo sistema — em breve</h3>
+        <p class="system-card-desc">Em desenvolvimento. Volte em breve pra ver o próximo experimento de IA aplicada à direção criativa.</p>
+        <div class="system-stack">
+          <span>SOON</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 09 — DIÁRIO (BLOG TEASER) -->
+<section class="diario" id="diario" data-screen-label="09 Diário">
+  <div class="diario-inner">
+    <div class="diario-header">
+      <div class="diario-title-wrap">
+        <div class="section-num reveal" style="padding-bottom: 18px;">009 — DIÁRIO</div>
+        <h2 class="section-title reveal">DIÁRIO</h2>
+      </div>
+      <a href="blog/index.html" class="diario-all reveal" data-cursor="hover">
+        VER TODOS OS POSTS <span>→</span>
+      </a>
+    </div>
+
+    <div class="diario-list">
+      <a href="blog/post-branding-essencia.html" class="diario-post reveal" data-cursor="hover">
+        <div class="diario-post-num">N°01</div>
+        <div class="diario-post-title">Por que sua marca não é o seu logotipo</div>
+        <div class="diario-post-cat">BRANDING</div>
+        <div class="diario-post-meta">04 MAI 2026 · 6 MIN</div>
+        <div class="diario-arrow">→</div>
+      </a>
+      <a href="blog/post-ia-direcao-criativa.html" class="diario-post reveal" data-cursor="hover">
+        <div class="diario-post-num">N°02</div>
+        <div class="diario-post-title">IA não substitui direção criativa. Substitui execução repetitiva.</div>
+        <div class="diario-post-cat">IA APLICADA AO DESIGN</div>
+        <div class="diario-post-meta">22 ABR 2026 · 8 MIN</div>
+        <div class="diario-arrow">→</div>
+      </a>
+      <a href="blog/post-direcao-criativa-redes.html" class="diario-post reveal" data-cursor="hover">
+        <div class="diario-post-num">N°03</div>
+        <div class="diario-post-title">Direção criativa para redes: estética não é estratégia</div>
+        <div class="diario-post-cat">DIREÇÃO CRIATIVA</div>
+        <div class="diario-post-meta">10 ABR 2026 · 5 MIN</div>
+        <div class="diario-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contato">
+  <div class="footer-inner">
+
+    <div class="footer-row intro">
+      <div class="footer-intro-text">
+        JÚLIA é a prática de design liderada por <em>Júlia Cardoso</em>, diretora criativa carioca atuando em branding, identidade visual e direção criativa há mais de cinco anos.
+      </div>
+      <div class="footer-intro-side">
+        <p>Trabalho com marcas independentes, estúdios e equipes internas que precisam traduzir intenção em forma visível. Escuta, tradução e construção — nessa ordem.</p>
+        <p>Aberta para projetos selecionados em 2026. <a href="mailto:contato@juliacardoso.dsgn" data-cursor="hover">Solicitar bio completa</a>.</p>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div class="footer-label">Projetos selecionados</div>
+      <div class="footer-content">
+        <ul>
+          <li>Ateliê Nuvem de Chumbo · Identidade Visual</li>
+          <li>Raiz. · Sistema Editorial</li>
+          <li>Casa Ofício · Branding + Audiovisual</li>
+          <li>Manifesto Casa Ofício · Direção Criativa</li>
+          <li>Coleção em produção · 2026</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div class="footer-label">Serviços</div>
+      <div class="footer-content">
+        <ul>
+          <li>Identidade Visual</li>
+          <li>Direção Criativa para Redes</li>
+          <li>Sistemas com IA</li>
+          <li>Edição de Vídeo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div class="footer-label">Links</div>
+      <div class="footer-content">
+        <ul>
+          <li><a href="https://instagram.com/juliacardoso.dsgn" target="_blank" rel="noopener" data-cursor="hover">Instagram</a></li>
+          <li><a href="#" data-cursor="hover">LinkedIn</a></li>
+          <li><a href="#" data-cursor="hover">Behance</a></li>
+          <li><a href="mailto:contato@juliacardoso.dsgn" data-cursor="hover">contato@juliacardoso.dsgn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        © 2025 Júlia Cardoso
+        <div class="sub">Rio de Janeiro · Brasil</div>
+      </div>
+      <div class="footer-bottom-right">
+        Esta é uma seleção do meu trabalho.
+        <div class="sub">Portfólio completo sob solicitação.</div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script>
+  /* ============== HERO: FLOATING IMAGES CYCLE + CLOCK ============== */
+  (function() {
+    const floats = document.querySelectorAll('.hero-float');
+    if (floats.length) {
+      let i = 0;
+      // show the first one immediately
+      floats[0].classList.add('active');
+      setInterval(() => {
+        floats[i].classList.remove('active');
+        i = (i + 1) % floats.length;
+        floats[i].classList.add('active');
+      }, 3800);
+    }
+
+    const clock = document.getElementById('heroClock');
+    if (clock) {
+      const tick = () => {
+        const now = new Date();
+        const hh = String(now.getHours()).padStart(2, '0');
+        const mm = String(now.getMinutes()).padStart(2, '0');
+        clock.textContent = `${hh}:${mm}`;
+      };
+      tick();
+      setInterval(tick, 1000 * 30);
+    }
+  })();
+
+  /* ============== JS HOOK (enables animation gating) ============== */
+  document.documentElement.classList.add('js');
+
+  /* ============== CUSTOM CURSOR ============== */
+  (function() {
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    // Lag of ~150ms via lerp
+    function tick() {
+      // Lower factor = more lag. 0.12 ~= ~150ms tail at 60fps
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Hover state on interactive elements
+    const hoverables = document.querySelectorAll('a, button, [data-cursor="hover"]');
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+    });
+
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity = '0';
+      ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    });
+  })();
+
+  /* ============== NAV SCROLL ============== */
+  (function() {
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ============== INTERSECTION REVEAL ============== */
+  (function() {
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const delay = (entry.target.dataset.delay) || (i * 60);
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, delay);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    els.forEach(el => io.observe(el));
+
+    // Safety net 1: reveal anything in initial viewport after a short delay,
+    // in case the observer never fires (static-render / paused contexts).
+    setTimeout(() => {
+      els.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible');
+        }
+      });
+    }, 250);
+
+    // Safety net 2: after 2s, force-reveal anything still hidden.
+    setTimeout(() => {
+      els.forEach(el => el.classList.add('is-visible'));
+    }, 2000);
+  })();
+
+  /* ============== HERO ANIMATION SAFETY NET ============== */
+  (function() {
+    // CSS keyframes can stall in paused iframes / html-to-image captures.
+    // Force-finalize the hero stagger items if they haven't progressed.
+    const items = document.querySelectorAll('.hero-stagger > *');
+    if (!items.length) return;
+
+    setTimeout(() => {
+      items.forEach(el => {
+        const cs = getComputedStyle(el);
+        if (parseFloat(cs.opacity) < 0.99) {
+          // Animation never progressed — drop the gating and let content show.
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          el.style.animation = 'none';
+        }
+      });
+
+      const marker = document.querySelector('.hero-marker');
+      if (marker) {
+        const cs = getComputedStyle(marker);
+        // If the scaleY is still 0, force it visible.
+        if (cs.transform.includes('matrix') && cs.transform.includes(', 0, 0)')) {
+          marker.style.animation = 'none';
+          marker.style.transform = 'translateY(-50%) scaleY(1)';
+        }
+      }
+    }, 1500);
+  })();
+
+  /* ============== SMOOTH ANCHOR SCROLL ============== */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
