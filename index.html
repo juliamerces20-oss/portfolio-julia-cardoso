@@ -1961,6 +1961,59 @@
     .hero-label { letter-spacing: 2px; font-size: 10px; }
     .label { letter-spacing: 2px; font-size: 10px; }
   }
+
+  /* ===================== LIGHTBOX ===================== */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+  .lightbox-overlay.active {
+    display: flex;
+  }
+  .lightbox-content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 4 / 5;
+    background: #F5F5F5;
+  }
+  .lightbox-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10000;
+    transition: opacity 0.2s ease;
+  }
+  .lightbox-close:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .lightbox-content {
+      max-width: 90vw;
+      aspect-ratio: 4 / 5;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1971,7 +2024,7 @@
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <div class="nav-copyright">© 2025</div>
+  <div class="nav-copyright">© 2026</div>
   <div class="nav-links">
     <a href="#trabalhos" data-cursor="hover">trabalhos</a>
     <a href="#reels" data-cursor="hover">reels</a>
@@ -2290,7 +2343,7 @@
       <div class="reel-card reveal" data-cursor="hover">
         <div class="reel-frame">
           <span class="reel-badge">CAMPANHA VERÃO</span>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID_1/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBxxxx1/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
         </div>
         <div class="reel-meta">
           <div>
@@ -2304,7 +2357,7 @@
       <div class="reel-card reveal" data-cursor="hover">
         <div class="reel-frame">
           <span class="reel-badge">NENA BRAND</span>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID_2/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBxxxx2/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
         </div>
         <div class="reel-meta">
           <div>
@@ -2318,7 +2371,7 @@
       <div class="reel-card reveal" data-cursor="hover">
         <div class="reel-frame">
           <span class="reel-badge">DIREÇÃO</span>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID_3/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBxxxx3/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
         </div>
         <div class="reel-meta">
           <div>
@@ -2332,7 +2385,7 @@
       <div class="reel-card reveal" data-cursor="hover">
         <div class="reel-frame">
           <span class="reel-badge">PROCESSOS</span>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID_4/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBxxxx4/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
         </div>
         <div class="reel-meta">
           <div>
@@ -2346,7 +2399,7 @@
       <div class="reel-card reveal" data-cursor="hover">
         <div class="reel-frame">
           <span class="reel-badge">EM BREVE</span>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID_5/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBxxxx5/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
         </div>
         <div class="reel-meta">
           <div>
@@ -2371,7 +2424,7 @@
     <div class="posts-grid">
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_1/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx11/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
           <span class="post-frame-meta">CARROSSEL · 8</span>
         </div>
         <div class="post-info">
@@ -2382,7 +2435,7 @@
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_2/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx12/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
           <span class="post-frame-meta">FEED</span>
         </div>
         <div class="post-info">
@@ -2393,7 +2446,7 @@
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_3/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx13/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
           <span class="post-frame-meta">CARROSSEL · 5</span>
         </div>
         <div class="post-info">
@@ -2404,7 +2457,7 @@
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_4/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx14/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
           <span class="post-frame-meta">FEED</span>
         </div>
         <div class="post-info">
@@ -2618,6 +2671,14 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <iframe class="lightbox-iframe" id="lightboxFrame"></iframe>
+  </div>
+</div>
+
 <script src="assets/image-slot.js"></script>
 <script>
   /* ============== HERO: FLOATING IMAGES CYCLE + CLOCK ============== */
@@ -2789,6 +2850,75 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+
+  /* ============== LIGHTBOX ============== */
+  (function() {
+    const overlay = document.getElementById('lightboxOverlay');
+    const frame = document.getElementById('lightboxFrame');
+    const closeBtn = document.getElementById('lightboxClose');
+    if (!overlay || !frame || !closeBtn) return;
+
+    // Convert Instagram URL to embed format
+    function getEmbedUrl(url) {
+      if (!url) return null;
+      // Convert instagram.com/reel/ID/ to instagram.com/reel/ID/embed/
+      // Convert instagram.com/p/ID/ to instagram.com/p/ID/embed/
+      const reelMatch = url.match(/instagram\.com\/reel\/([^/?]+)/);
+      const postMatch = url.match(/instagram\.com\/p\/([^/?]+)/);
+
+      if (reelMatch) {
+        return `https://www.instagram.com/reel/${reelMatch[1]}/embed/`;
+      } else if (postMatch) {
+        return `https://www.instagram.com/p/${postMatch[1]}/embed/`;
+      }
+      return null;
+    }
+
+    // Open lightbox with Instagram embed
+    function openLightbox(url) {
+      const embedUrl = getEmbedUrl(url);
+      if (!embedUrl) return;
+      frame.src = embedUrl;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close lightbox
+    function closeLightbox() {
+      overlay.classList.remove('active');
+      frame.src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close button
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    // Close on overlay click (outside iframe)
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    // Attach click handlers to reel and post frames
+    document.querySelectorAll('.reel-frame, .post-frame').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        const blockquote = el.querySelector('.instagram-media');
+        if (blockquote) {
+          const url = blockquote.getAttribute('data-instgrm-permalink');
+          if (url) openLightbox(url);
+        }
+      });
+    });
+  })();
 
   /* ============== INSTAGRAM EMBEDS ============== */
   (function() {
