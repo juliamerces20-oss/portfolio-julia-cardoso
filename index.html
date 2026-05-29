@@ -648,67 +648,6 @@
     background: #0A0A0A;
     padding: 160px 48px 120px;
     border-bottom: 1px solid rgba(245, 245, 245, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .doodle {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  @keyframes doodle-float-a {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  @keyframes doodle-float-b {
-    0%, 100% { transform: translateY(0) rotate(-10deg); }
-    50% { transform: translateY(-6px) rotate(-10deg); }
-  }
-  @keyframes doodle-float-c {
-    0%, 100% { transform: translateY(0) rotate(15deg); }
-    50% { transform: translateY(-6px) rotate(15deg); }
-  }
-
-  /* — doodles ao redor da foto — */
-  .portrait-doodle-wrap {
-    position: relative;
-  }
-
-  .pdoodle {
-    position: absolute;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  @keyframes pd1 {
-    0%,100% { transform: translate(-50%,-50%) rotate(0deg) translateY(0); }
-    50%      { transform: translate(-50%,-50%) rotate(5deg) translateY(-7px); }
-  }
-  @keyframes pd2 {
-    0%,100% { transform: translate(50%,-50%) rotate(15deg) translateY(0); }
-    50%      { transform: translate(50%,-50%) rotate(20deg) translateY(-7px); }
-  }
-  @keyframes pd3 {
-    0%,100% { transform: translate(-50%,50%) rotate(0deg) translateY(0); }
-    50%      { transform: translate(-50%,50%) rotate(-5deg) translateY(-7px); }
-  }
-  @keyframes pd4 {
-    0%,100% { transform: translate(50%,0) rotate(0deg) translateY(0); }
-    50%      { transform: translate(50%,0) rotate(-5deg) translateY(-7px); }
-  }
-  @keyframes pd5 {
-    0%,100% { transform: translate(50%,50%) rotate(0deg) translateY(0); }
-    50%      { transform: translate(50%,50%) rotate(5deg) translateY(-7px); }
-  }
-  @keyframes pd6 {
-    0%,100% { transform: translate(-50%,-50%) rotate(0deg) translateY(0); }
-    50%      { transform: translate(-50%,-50%) rotate(-5deg) translateY(-7px); }
-  }
-  @keyframes pd7 {
-    0%,100% { transform: translate(50%,0) rotate(0deg) translateY(0); }
-    50%      { transform: translate(50%,0) rotate(5deg) translateY(-7px); }
   }
 
   .positioning-inner {
@@ -719,8 +658,6 @@
     grid-template-rows: auto auto;
     gap: 48px;
     align-items: stretch;
-    position: relative;
-    z-index: 2;
   }
 
   .positioning-header {
@@ -2154,64 +2091,14 @@
 <!-- 03 — POSITIONING -->
 <section class="positioning" data-screen-label="03 Posicionamento">
 
-  <!-- doodle 1: raio grande — canto superior direito -->
-  <svg class="doodle" style="top:48px;right:80px;width:80px;height:80px;transform:rotate(15deg);animation:doodle-float-c 4s ease-in-out infinite;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polyline points="50,4 28,44 44,44 30,76" stroke="#E63230" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
-  </svg>
-
-  <!-- doodle 2: raio menor — ao lado direito do texto -->
-  <svg class="doodle" style="top:38%;right:22%;width:45px;height:45px;animation:doodle-float-b 5s ease-in-out infinite 1.2s;" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polyline points="28,2 16,24 25,24 17,43" stroke="#F5F5F5" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
-  </svg>
-
-  <!-- doodle 3: estrela 4 pontas (X com traços retos) — abaixo do raio grande -->
-  <svg class="doodle" style="top:210px;right:72px;width:35px;height:35px;animation:doodle-float-a 3.5s ease-in-out infinite 0.6s;" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <line x1="17.5" y1="2" x2="17.5" y2="33" stroke="#E63230" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="2" y1="17.5" x2="33" y2="17.5" stroke="#E63230" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="6" y1="6" x2="29" y2="29" stroke="#E63230" stroke-width="2.5" stroke-linecap="square"/>
-    <line x1="29" y1="6" x2="6" y2="29" stroke="#E63230" stroke-width="2.5" stroke-linecap="square"/>
-  </svg>
-
-  <!-- doodle 4: círculo irregular estilo hand-drawn — canto inferior esquerdo -->
-  <svg class="doodle" style="bottom:80px;left:48px;width:50px;height:50px;animation:doodle-float-a 6s ease-in-out infinite 2s;" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M25,4 C36,3 47,11 47,25 C47,38 37,48 24,47 C11,46 3,36 4,24 C5,12 14,4 25,4 Z" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-
-  <!-- doodle 5: dois traços paralelos — canto inferior da coluna esquerda -->
-  <svg class="doodle" style="bottom:120px;left:36%;width:36px;height:18px;animation:doodle-float-a 4.5s ease-in-out infinite 0.9s;" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <line x1="2" y1="4" x2="34" y2="4" stroke="#E63230" stroke-width="3" stroke-linecap="square"/>
-    <line x1="2" y1="14" x2="34" y2="14" stroke="#E63230" stroke-width="3" stroke-linecap="square"/>
-  </svg>
-
-  <!-- doodle 6: seta simples apontando para baixo — entre headline e parágrafo -->
-  <svg class="doodle" style="top:55%;right:8%;width:30px;height:40px;animation:doodle-float-a 3.8s ease-in-out infinite 1.7s;" viewBox="0 0 30 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <line x1="15" y1="2" x2="15" y2="34" stroke="#F5F5F5" stroke-width="2" stroke-linecap="square"/>
-    <line x1="15" y1="34" x2="4" y2="22" stroke="#F5F5F5" stroke-width="2" stroke-linecap="square"/>
-    <line x1="15" y1="34" x2="26" y2="22" stroke="#F5F5F5" stroke-width="2" stroke-linecap="square"/>
-  </svg>
-
   <div class="positioning-inner">
     <div class="positioning-header reveal">
       <div class="positioning-num">001 — QUEM SOU</div>
     </div>
     <div class="positioning-left reveal">
-      <div class="portrait-doodle-wrap">
-
-        <!-- pd1: estrela 6 pontas — canto superior esquerdo -->
-        <svg class="pdoodle" style="top:0;left:0;width:60px;height:60px;animation:pd1 4s ease-in-out infinite 0s;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M30,5.5 L36.5,19 L51,17.5 L42.5,30.5 L51.5,42.5 L35.5,41 L30.5,54.5 L23.5,40.5 L8.5,41.5 L17.5,30.5 L9,17 L24,19 Z" stroke="#E63230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-
-        <!-- pd5: estrela 6 pontas — canto inferior direito -->
-        <svg class="pdoodle" style="bottom:0;right:0;width:60px;height:60px;animation:pd5 4.5s ease-in-out infinite 2s;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M30,5.5 L36.5,19 L51,17.5 L42.5,30.5 L51.5,42.5 L35.5,41 L30.5,54.5 L23.5,40.5 L8.5,41.5 L17.5,30.5 L9,17 L24,19 Z" stroke="#E63230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-
-        <figure class="positioning-portrait">
-          <img src="assets/julia-portrait.png" alt="Retrato de Júlia Cardoso" loading="lazy" />
-        </figure>
-
-      </div>
+      <figure class="positioning-portrait">
+        <img src="assets/julia-portrait.png" alt="Retrato de Júlia Cardoso" loading="lazy" />
+      </figure>
     </div>
     <div class="positioning-right">
       <p class="positioning-statement reveal">
