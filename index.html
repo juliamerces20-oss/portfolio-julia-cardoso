@@ -671,6 +671,46 @@
     50% { transform: translateY(-6px) rotate(15deg); }
   }
 
+  /* — doodles ao redor da foto — */
+  .portrait-doodle-wrap {
+    position: relative;
+  }
+
+  .pdoodle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  @keyframes pd1 {
+    0%,100% { transform: translate(-50%,-50%) rotate(0deg) translateY(0); }
+    50%      { transform: translate(-50%,-50%) rotate(5deg) translateY(-7px); }
+  }
+  @keyframes pd2 {
+    0%,100% { transform: translate(50%,-50%) rotate(15deg) translateY(0); }
+    50%      { transform: translate(50%,-50%) rotate(20deg) translateY(-7px); }
+  }
+  @keyframes pd3 {
+    0%,100% { transform: translate(-50%,50%) rotate(0deg) translateY(0); }
+    50%      { transform: translate(-50%,50%) rotate(-5deg) translateY(-7px); }
+  }
+  @keyframes pd4 {
+    0%,100% { transform: translate(50%,0) rotate(0deg) translateY(0); }
+    50%      { transform: translate(50%,0) rotate(-5deg) translateY(-7px); }
+  }
+  @keyframes pd5 {
+    0%,100% { transform: translate(50%,50%) rotate(0deg) translateY(0); }
+    50%      { transform: translate(50%,50%) rotate(5deg) translateY(-7px); }
+  }
+  @keyframes pd6 {
+    0%,100% { transform: translate(-50%,-50%) rotate(0deg) translateY(0); }
+    50%      { transform: translate(-50%,-50%) rotate(-5deg) translateY(-7px); }
+  }
+  @keyframes pd7 {
+    0%,100% { transform: translate(50%,0) rotate(0deg) translateY(0); }
+    50%      { transform: translate(50%,0) rotate(5deg) translateY(-7px); }
+  }
+
   .positioning-inner {
     max-width: 1600px;
     margin: 0 auto;
@@ -2155,9 +2195,52 @@
       <div class="positioning-num">001 — QUEM SOU</div>
     </div>
     <div class="positioning-left reveal">
-      <figure class="positioning-portrait">
-        <img src="assets/julia-portrait.png" alt="Retrato de Júlia Cardoso" loading="lazy" />
-      </figure>
+      <div class="portrait-doodle-wrap">
+
+        <!-- pd1: estrela 6 pontas — canto superior esquerdo -->
+        <svg class="pdoodle" style="top:0;left:0;width:60px;height:60px;animation:pd1 4s ease-in-out infinite 0s;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M30,5.5 L36.5,19 L51,17.5 L42.5,30.5 L51.5,42.5 L35.5,41 L30.5,54.5 L23.5,40.5 L8.5,41.5 L17.5,30.5 L9,17 L24,19 Z" stroke="#E63230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- pd2: raio/lightning bolt — canto superior direito -->
+        <svg class="pdoodle" style="top:0;right:0;width:55px;height:55px;animation:pd2 3.5s ease-in-out infinite 0.5s;" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M37,4 L17,29 L30,30.5 L13,53" stroke="#F5F5F5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- pd3: círculo duplo — canto inferior esquerdo -->
+        <svg class="pdoodle" style="bottom:0;left:0;width:50px;height:50px;animation:pd3 5s ease-in-out infinite 1s;" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M43,24 C44,13 35,5 24,6 C13,5 4,14 5,25 C4,36 13,45 25,44 C36,45 44,35 43,24 Z" stroke="#E63230" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M40,25 C41,17 35,11 26,12 C17,11 11,18 12,26 C11,34 17,41 26,40 C35,41 41,34 40,25 Z" stroke="#E63230" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- pd4: seta curva — direita, abaixo do raio -->
+        <svg class="pdoodle" style="top:30%;right:0;width:45px;height:50px;animation:pd4 4.5s ease-in-out infinite 1.5s;" viewBox="0 0 45 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M38,5 Q22,10 12,38" stroke="#F5F5F5" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M12,38 L20,28" stroke="#F5F5F5" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M12,38 L24,41" stroke="#F5F5F5" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+
+        <!-- pd5: sparkle/diamante 4 pontas — canto inferior direito -->
+        <svg class="pdoodle" style="bottom:0;right:0;width:50px;height:50px;animation:pd5 3.8s ease-in-out infinite 2s;" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M25,2 L33,18 L48,25 L33,33 L25,48 L17,32 L2,25 L17,17 Z" stroke="#E63230" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- pd6: ponto de exclamação — lado esquerdo, meio -->
+        <svg class="pdoodle" style="top:50%;left:0;width:40px;height:48px;animation:pd6 5.5s ease-in-out infinite 2.5s;" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20,4 C21,12 19,20 20.5,30 C20.8,32 20,33 20,33" stroke="#F5F5F5" stroke-width="3" stroke-linecap="round"/>
+          <path d="M17,40 C17,37 23,37 23,40 C23,43 17,43 17,40 Z" stroke="#F5F5F5" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+
+        <!-- pd7: mini estrela 5 pontas — direita acima do sparkle -->
+        <svg class="pdoodle" style="bottom:22%;right:0;width:25px;height:25px;animation:pd7 4.2s ease-in-out infinite 3s;" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12.5,1 L15.5,8.5 L23,9 L17,14 L19,21.5 L12.5,17 L6,21.5 L8,13.5 L2,9 L10,8.5 Z" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <figure class="positioning-portrait">
+          <img src="assets/julia-portrait.png" alt="Retrato de Júlia Cardoso" loading="lazy" />
+        </figure>
+
+      </div>
     </div>
     <div class="positioning-right">
       <p class="positioning-statement reveal">
