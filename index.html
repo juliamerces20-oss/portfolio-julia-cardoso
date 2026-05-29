@@ -2046,7 +2046,7 @@
     </div>
     <div class="hero-meta-right">
       Rio de Janeiro
-      <div class="time" id="heroClock">— : —</div>
+      <div class="time" id="relogio-rj">15:01</div>
     </div>
   </div>
 
@@ -2933,6 +2933,25 @@
         window.instgrm.Embeds.process();
       }
     };
+  })();
+
+  /* ============== RELÓGIO TEMPO REAL — RIO DE JANEIRO ============== */
+  (function() {
+    const relogioEl = document.getElementById('relogio-rj');
+    if (!relogioEl) return;
+
+    function atualizarRelogio() {
+      const agora = new Date();
+      const horario = agora.toLocaleTimeString('pt-BR', {
+        timeZone: 'America/Sao_Paulo',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      relogioEl.textContent = horario;
+    }
+
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 1000);
   })();
 </script>
 
