@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campanha de Verão GCM — Júlia Cardoso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #E63230;
+      --light: #F5F5F5;
+      --bg: #0A0A0A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--light);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245,245,245,0.08);
+    }
+
+    .back-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--light);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; }
+    .back-link::before { content: "←  "; }
+
+    /* ── HERO ── */
+    .project-hero {
+      margin-top: 65px;
+      width: 100%;
+      max-height: 60vh;
+      overflow: hidden;
+    }
+    .project-hero img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── CONTENT ── */
+    .project-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 48px 120px;
+    }
+
+    .project-meta {
+      margin-bottom: 64px;
+    }
+
+    .project-title {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid var(--red);
+      padding: 6px 14px;
+    }
+
+    /* ── TEXT BLOCKS ── */
+    .project-body {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      margin-bottom: 80px;
+    }
+
+    .text-block h2 {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .text-block p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(245,245,245,0.85);
+      max-width: 680px;
+    }
+
+    /* ── CREDITS ── */
+    .project-credits {
+      border-top: 1px solid rgba(245,245,245,0.12);
+      padding-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    .credits-label {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.4);
+      margin-bottom: 20px;
+    }
+
+    .credits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .credits-list p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(245,245,245,0.7);
+    }
+
+    .credits-list strong {
+      color: var(--light);
+      font-weight: 500;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-section {
+      border-top: 1px solid rgba(245,245,245,0.12);
+      padding-top: 64px;
+    }
+
+    .gallery-label {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.4);
+      margin-bottom: 32px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(245,245,245,0.08);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: rgba(245,245,245,0.35);
+      letter-spacing: 0.04em;
+    }
+
+    footer a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: rgba(245,245,245,0.5);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--light); }
+
+    @media (max-width: 720px) {
+      header { padding: 16px 24px; }
+      .project-content { padding: 48px 24px 80px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="back-link" href="index.html#trabalhos">Voltar</a>
+  </header>
+
+  <div class="project-hero">
+    <img src="assets/gcm-capa.png" alt="Campanha de Verão GCM" />
+  </div>
+
+  <main class="project-content">
+
+    <div class="project-meta">
+      <h1 class="project-title">Campanha de Verão GCM</h1>
+      <div class="project-tags">
+        <span class="tag">Design de Marca</span>
+        <span class="tag">Direção de Arte</span>
+        <span class="tag">2025</span>
+      </div>
+    </div>
+
+    <div class="project-body">
+      <div class="text-block">
+        <p>O Grupo Caru Moreno é uma clínica de dermatologia e estética avançada que tem como propósito realçar a essência natural de seus pacientes. Com um atendimento personalizado e procedimentos exclusivos, a clínica se destaca por oferecer uma experiência que une cuidado, excelência e acolhimento em cada etapa. Nesta campanha, o Grupo Caru Moreno buscou inspiração no espírito vibrante do verão. Cada protocolo foi cuidadosamente planejado e recebeu o nome de uma praia paradisíaca, remetendo a momentos de tranquilidade e renovação.</p>
+      </div>
+
+      <div class="text-block">
+        <h2>Conceito Criativo</h2>
+        <p>O ponto de partida para esta campanha foi a ideia de traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas sim despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual da campanha mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar, enquanto as formas orgânicas dos elementos gráficos evocam a fluidez das ondas.</p>
+      </div>
+    </div>
+
+    <div class="project-credits">
+      <p class="credits-label">Créditos</p>
+      <div class="credits-list">
+        <p><strong>Direção Geral:</strong> Glenda Maria</p>
+        <p><strong>Texto:</strong> Luany Vasconcelos</p>
+        <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <p class="gallery-label">Galeria</p>
+      <div class="gallery-grid">
+        <img src="assets/gcm-01.png" alt="GCM 01" loading="lazy" />
+        <img src="assets/gcm-02.png" alt="GCM 02" loading="lazy" />
+        <img src="assets/gcm-03.png" alt="GCM 03" loading="lazy" />
+        <img src="assets/gcm-04.png" alt="GCM 04" loading="lazy" />
+        <img src="assets/gcm-05.png" alt="GCM 05" loading="lazy" />
+        <img src="assets/gcm-06.jpg" alt="GCM 06" loading="lazy" />
+        <img src="assets/gcm-07.jpg" alt="GCM 07" loading="lazy" />
+        <img src="assets/gcm-08.jpg" alt="GCM 08" loading="lazy" />
+        <img src="assets/gcm-09.gif" alt="GCM 09" loading="lazy" />
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Júlia Cardoso</p>
+    <a href="index.html#trabalhos">← Voltar ao portfólio</a>
+  </footer>
+
+</body>
+</html>

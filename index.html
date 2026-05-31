@@ -906,6 +906,24 @@
     transform: scale(0.99);
   }
 
+  a.case {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.35s ease;
+  }
+  a.case:hover {
+    transform: scale(1.02);
+  }
+  a.case:hover .case-mockup {
+    transform: none;
+  }
+
+  .case.case--soon {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+
   .case-caption {
     display: flex;
     justify-content: space-between;
@@ -2288,7 +2306,7 @@
 
     <div class="cases-grid">
 
-      <article class="case reveal" data-cursor="hover">
+      <a class="case reveal" href="projeto-gcm.html" data-cursor="hover">
         <div class="case-mockup">
           <image-slot id="case-1" placeholder="Projeto 01" shape="rect" class="case-slot" src="assets/gcm-capa.png"></image-slot>
         </div>
@@ -2296,9 +2314,9 @@
           <h3 class="case-name">Campanha de Verão GCM</h3>
           <div class="case-category">Direção Criativa, Audiovisual</div>
         </div>
-      </article>
+      </a>
 
-      <article class="case reveal" data-cursor="hover">
+      <a class="case reveal" href="projeto-nena.html" data-cursor="hover">
         <div class="case-mockup">
           <image-slot id="case-2" placeholder="Projeto 02" shape="rect" class="case-slot" src="assets/nena-capa.png"></image-slot>
         </div>
@@ -2306,9 +2324,9 @@
           <h3 class="case-name">Identidade Visual Nena</h3>
           <div class="case-category">Identidade Visual, Marca</div>
         </div>
-      </article>
+      </a>
 
-      <article class="case reveal" data-cursor="hover">
+      <article class="case case--soon reveal">
         <div class="case-mockup">
           <image-slot id="case-3" placeholder="Projeto 03" shape="rect" class="case-slot"></image-slot>
         </div>
@@ -2318,7 +2336,7 @@
         </div>
       </article>
 
-      <article class="case reveal" data-cursor="hover">
+      <article class="case case--soon reveal">
         <div class="case-mockup">
           <image-slot id="case-4" placeholder="Projeto 04" shape="rect" class="case-slot"></image-slot>
         </div>
