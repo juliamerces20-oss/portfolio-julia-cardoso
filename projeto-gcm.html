@@ -4,26 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campanha de Verão GCM — Júlia Cardoso</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
 
     :root {
-      --red: #E63230;
-      --light: #F5F5F5;
-      --bg: #0A0A0A;
+      --red: #F00E0E;
+      --ink: #000000;
+      --bg: #FFFFFF;
+      --muted: rgba(0,0,0,0.45);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
-      color: var(--light);
-      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      font-family: 'Satoshi', sans-serif;
       font-size: 16px;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── HEADER ── */
@@ -36,20 +37,20 @@
       padding: 20px 48px;
       display: flex;
       align-items: center;
-      background: rgba(10,10,10,0.92);
+      background: rgba(255,255,255,0.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(245,245,245,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .back-link {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 13px;
       font-weight: 500;
-      color: var(--light);
+      color: var(--ink);
       text-decoration: none;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      opacity: 0.7;
+      opacity: 0.6;
       transition: opacity 0.2s;
     }
     .back-link:hover { opacity: 1; }
@@ -81,12 +82,13 @@
     }
 
     .project-title {
-      font-family: 'Unbounded', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-weight: 900;
       font-size: clamp(28px, 4vw, 56px);
       line-height: 1.1;
       letter-spacing: -0.02em;
       margin-bottom: 24px;
+      color: var(--ink);
     }
 
     .project-tags {
@@ -96,7 +98,7 @@
     }
 
     .tag {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.06em;
@@ -115,7 +117,7 @@
     }
 
     .text-block h2 {
-      font-family: 'Unbounded', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-weight: 700;
       font-size: 13px;
       letter-spacing: 0.1em;
@@ -125,26 +127,27 @@
     }
 
     .text-block p {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 17px;
       line-height: 1.75;
-      color: rgba(245,245,245,0.85);
+      color: rgba(0,0,0,0.75);
       max-width: 680px;
     }
 
     /* ── CREDITS ── */
     .project-credits {
-      border-top: 1px solid rgba(245,245,245,0.12);
+      border-top: 1px solid rgba(0,0,0,0.1);
       padding-top: 40px;
       margin-bottom: 80px;
     }
 
     .credits-label {
-      font-family: 'Unbounded', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 10px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.4);
+      color: rgba(0,0,0,0.4);
       margin-bottom: 20px;
     }
 
@@ -155,28 +158,29 @@
     }
 
     .credits-list p {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 14px;
-      color: rgba(245,245,245,0.7);
+      color: rgba(0,0,0,0.65);
     }
 
     .credits-list strong {
-      color: var(--light);
+      color: var(--ink);
       font-weight: 500;
     }
 
     /* ── GALLERY ── */
     .gallery-section {
-      border-top: 1px solid rgba(245,245,245,0.12);
+      border-top: 1px solid rgba(0,0,0,0.1);
       padding-top: 64px;
     }
 
     .gallery-label {
-      font-family: 'Unbounded', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 10px;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.4);
+      color: rgba(0,0,0,0.4);
       margin-bottom: 32px;
     }
 
@@ -195,7 +199,7 @@
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid rgba(245,245,245,0.08);
+      border-top: 1px solid rgba(0,0,0,0.08);
       padding: 40px 48px;
       display: flex;
       align-items: center;
@@ -205,23 +209,23 @@
     }
 
     footer p {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 12px;
-      color: rgba(245,245,245,0.35);
+      color: rgba(0,0,0,0.35);
       letter-spacing: 0.04em;
     }
 
     footer a {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Satoshi', sans-serif;
       font-size: 12px;
-      color: rgba(245,245,245,0.5);
+      color: rgba(0,0,0,0.5);
       text-decoration: none;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
 
-    footer a:hover { color: var(--light); }
+    footer a:hover { color: var(--red); }
 
     @media (max-width: 720px) {
       header { padding: 16px 24px; }
