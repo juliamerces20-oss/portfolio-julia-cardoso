@@ -39,7 +39,7 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; cursor: none; }
 
   html {
     scroll-behavior: smooth;
@@ -76,24 +76,20 @@
   .hairline { height: 1px; width: 100%; background: rgba(0,0,0,0.1); border: none; }
 
   /* ===== CURSOR ===== */
-  .cursor-dot, .cursor-ring {
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9999;
+  #cursor {
+    width: 16px;
+    height: 16px;
+    background: #F00E0E;
+    border-radius: 50% !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999;
     transform: translate(-50%, -50%);
-    will-change: transform;
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
   }
-  .cursor-dot { width: 10px; height: 10px; background: #F00E0E; }
-  .cursor-ring {
-    width: 40px; height: 40px;
-    border: 1px solid #F00E0E;
-    transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
-  }
-  .cursor-ring.hover { width: 60px; height: 60px; background: rgba(240,14,14,0.08); }
-  @media (max-width: 768px) {
-    body { cursor: auto; }
-    a, button { cursor: pointer; }
-    .cursor-dot, .cursor-ring { display: none; }
-  }
+  #cursor.hover { width: 32px; height: 32px; opacity: 0.6; }
 
   /* ===== NAV ===== */
   .nav {
@@ -145,6 +141,35 @@
   .hero-meta-left .sub { color: rgba(255,255,255,0.55); margin-top: 2px; }
   .hero-meta-right { text-align: right; }
   .hero-meta-right .time { color: rgba(255,255,255,0.55); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  /* ===== TICKER ===== */
+  .hero-ticker {
+    height: 48px;
+    overflow: hidden;
+    background: #000000;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .hero-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: hero-marquee 30s linear infinite;
+  }
+  .hero-ticker-line {
+    flex: 0 0 auto;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hero-ticker-star { color: #F00E0E; }
+  @keyframes hero-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
   /* ===== MÉTODO ===== */
   .method { background: #FFFFFF; padding: 160px 48px 140px; border-bottom: 1px solid rgba(0,0,0,0.08); }
@@ -333,6 +358,7 @@
     width: 100% !important; height: 100% !important; display: block;
     --slot-bg: #C8C3B8; --slot-border: rgba(0,0,0,0.05);
   }
+  .case-mockup img.case-slot { object-fit: cover; }
   .case:hover .case-mockup { transform: scale(0.99); }
   a.case { text-decoration: none; color: inherit; transition: transform 0.35s ease; }
   a.case:hover { transform: scale(1.02); }
@@ -414,7 +440,7 @@
   .reel-card:hover { transform: translateY(-6px); }
   .reel-frame {
     position: relative; width: 100%; aspect-ratio: 9 / 16;
-    background: #C8C3B8; overflow: hidden; cursor: pointer;
+    background: #C8C3B8; overflow: hidden; cursor: none;
   }
   .reel-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
   .reel-play-btn {
@@ -465,7 +491,7 @@
     background: rgba(255,255,255,0.9); border: none;
     width: 36px; height: 36px;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer; color: #F00E0E;
+    cursor: none; color: #F00E0E;
     transition: background 0.2s ease, color 0.2s ease;
   }
   .post-carousel-btn:hover { background: #F00E0E; color: #FFFFFF; }
@@ -586,15 +612,14 @@
   .lightbox-overlay.active { display: flex; }
   .lightbox-content { position: relative; width: 100%; max-width: 600px; aspect-ratio: 4/5; background: #FFFFFF; }
   .lightbox-iframe { width: 100%; height: 100%; border: none; }
-  .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: #FFFFFF; font-size: 24px; cursor: pointer; padding: 8px; z-index: 10000; transition: opacity 0.2s ease; }
+  .lightbox-close { position: absolute; top: -48px; right: 0; background: none; border: none; color: #FFFFFF; font-size: 24px; cursor: none; padding: 8px; z-index: 10000; transition: opacity 0.2s ease; }
   .lightbox-close:hover { opacity: 0.7; }
   @media (max-width: 768px) { .lightbox-content { max-width: 90vw; } }
 </style>
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div id="cursor"></div>
 
 <nav class="nav" id="nav">
   <div class="nav-links">
@@ -603,6 +628,7 @@
     <a href="#posts" data-cursor="hover">posts</a>
     <a href="#sistemas" data-cursor="hover">ia</a>
     <a href="#diario" data-cursor="hover">diário</a>
+    <a href="info.html" data-cursor="hover">info</a>
     <a href="#contato" data-cursor="hover">contato</a>
   </div>
 </nav>
@@ -618,6 +644,13 @@
       Rio de Janeiro
       <div class="time" id="relogio-rj">15:01</div>
     </div>
+  </div>
+</section>
+
+<section class="hero-ticker" aria-hidden="true">
+  <div class="hero-ticker-track">
+    <div class="hero-ticker-line">MERCADO <span class="hero-ticker-star">✦</span> ESTRATÉGIA <span class="hero-ticker-star">✦</span> POSICIONAMENTO <span class="hero-ticker-star">✦</span> ARQUITETURA DE MARCA <span class="hero-ticker-star">✦</span> IDENTIDADE VISUAL <span class="hero-ticker-star">✦</span> BRANDING <span class="hero-ticker-star">✦</span> DIREÇÃO CRIATIVA <span class="hero-ticker-star">✦</span> SISTEMAS COM IA <span class="hero-ticker-star">✦</span> CONTEÚDO <span class="hero-ticker-star">✦</span> AUDIOVISUAL <span class="hero-ticker-star">✦</span>&nbsp;</div>
+    <div class="hero-ticker-line">MERCADO <span class="hero-ticker-star">✦</span> ESTRATÉGIA <span class="hero-ticker-star">✦</span> POSICIONAMENTO <span class="hero-ticker-star">✦</span> ARQUITETURA DE MARCA <span class="hero-ticker-star">✦</span> IDENTIDADE VISUAL <span class="hero-ticker-star">✦</span> BRANDING <span class="hero-ticker-star">✦</span> DIREÇÃO CRIATIVA <span class="hero-ticker-star">✦</span> SISTEMAS COM IA <span class="hero-ticker-star">✦</span> CONTEÚDO <span class="hero-ticker-star">✦</span> AUDIOVISUAL <span class="hero-ticker-star">✦</span>&nbsp;</div>
   </div>
 </section>
 
@@ -736,7 +769,7 @@
     <div class="cases-grid">
       <a class="case reveal" href="projeto-gcm.html" data-cursor="hover">
         <div class="case-mockup">
-          <image-slot id="case-1" placeholder="GCM" shape="rect" class="case-slot" src="assets/gcm-capa.png"></image-slot>
+          <img class="case-slot" src="assets/gcm-capa.png" alt="Campanha de Verão GCM" loading="lazy" />
         </div>
         <div class="case-caption">
           <h3 class="case-name">Campanha de Verão GCM</h3>
@@ -745,7 +778,7 @@
       </a>
       <a class="case reveal" href="projeto-nena.html" data-cursor="hover">
         <div class="case-mockup">
-          <image-slot id="case-2" placeholder="Nena" shape="rect" class="case-slot" src="assets/nena-capa.png"></image-slot>
+          <img class="case-slot" src="assets/nena-capa.png" alt="Identidade Visual Nena" loading="lazy" />
         </div>
         <div class="case-caption">
           <h3 class="case-name">Identidade Visual Nena</h3>
@@ -999,7 +1032,7 @@
     </div>
     <div class="positioning-right">
       <p class="positioning-statement reveal">
-        Sempre criei coisas pela casa. Minha mãe ficava doidinha, eu ficava no meu mundo. Sou formada em publicidade e dirijo marcas por escolha, não por acidente. Essa essência de criar com <em>intenção</em> nunca saiu do meu trabalho. Nada aqui é só projeto. É o que eu sempre quis fazer, com nome e <em>método</em>.
+        Crio marcas que unem estratégia, estética e significado. Por meio do branding, do design e da comunicação, transformo negócios em marcas memoráveis, com identidade própria e posicionamento claro. Cada projeto nasce de uma imersão profunda na essência da marca, permitindo desenvolver soluções visuais e estratégicas que refletem sua verdade, fortalecem sua presença e ampliam sua conexão com as pessoas. Mais do que criar identidades visuais, construo experiências que geram reconhecimento, confiança e valor a longo prazo.
       </p>
       <p class="positioning-body reveal">
         Não aceito que design exista só na superfície das coisas. Formada em publicidade, criada na Zona Norte do Rio. Escuto antes de criar, entendo antes de executar. Quem chega aqui com a dor de "ninguém me entendeu" vai se ver no resultado.
@@ -1104,15 +1137,18 @@
 
   /* CURSOR */
   (function() {
-    const dot = document.getElementById('cursorDot');
-    const ring = document.getElementById('cursorRing');
-    if (!dot || !ring) return;
-    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2, ringX = mouseX, ringY = mouseY;
-    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; dot.style.transform = `translate(${mouseX}px,${mouseY}px) translate(-50%,-50%)`; });
-    (function tick() { ringX += (mouseX - ringX) * 0.12; ringY += (mouseY - ringY) * 0.12; ring.style.transform = `translate(${ringX}px,${ringY}px) translate(-50%,-50%)`; requestAnimationFrame(tick); })();
-    document.querySelectorAll('a,button,[data-cursor="hover"]').forEach(el => { el.addEventListener('mouseenter', () => ring.classList.add('hover')); el.addEventListener('mouseleave', () => ring.classList.remove('hover')); });
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
+    const cursor = document.getElementById('cursor');
+    if (!cursor) return;
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+    document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
   })();
 
   /* NAV */

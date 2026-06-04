@@ -1,227 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Campanha de Verão GCM — Júlia Cardoso</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campanha de Verão GCM — Júlia Cardoso</title>
+<meta name="description" content="Campanha de Verão GCM por Júlia Cardoso. Design de marca e direção de arte." />
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; cursor: none; }
+  html { scroll-behavior: smooth; background: #FFFFFF; }
+  body { background: #FFFFFF; color: #000000; font-family: 'Satoshi', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; cursor: none; }
+  ::selection { background: #F00E0E; color: #FFFFFF; }
 
-    html { scroll-behavior: smooth; background: #FFFFFF; }
+  #cursor { width: 16px; height: 16px; background: #F00E0E; border-radius: 50% !important; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease; }
+  #cursor.hover { width: 32px; height: 32px; opacity: 0.6; }
 
-    body {
-      background: #FFFFFF;
-      color: #000000;
-      font-family: 'Satoshi', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+  .project-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 28px 48px; background: transparent; color: #FFFFFF; transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease; }
+  .project-header.scrolled { background: rgba(255,255,255,0.96); color: #000000; box-shadow: 0 8px 30px rgba(0,0,0,0.08); padding: 18px 48px; }
+  .project-logo { font-weight: 900; font-size: 14px; letter-spacing: -0.02em; }
+  .project-nav { display: flex; align-items: center; gap: 28px; }
+  .project-nav a { font-weight: 500; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; transition: color 0.2s ease; }
+  .project-nav a:hover { color: #F00E0E; }
 
-    a { color: inherit; text-decoration: none; transition: color 0.2s; }
-    ::selection { background: #F00E0E; color: #FFFFFF; }
+  .project-hero { width: 100%; height: 100vh; background: #000000; overflow: hidden; }
+  .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* HEADER */
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 48px;
-      display: flex; align-items: center;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .back-link {
-      font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 500;
-      color: #000000; letter-spacing: 0.04em; text-transform: uppercase;
-      opacity: 0.6; transition: opacity 0.2s;
-    }
-    .back-link::before { content: "←  "; }
-    .back-link:hover { opacity: 1; }
+  .project-title-block { padding: 80px 48px; }
+  .project-title-inner, .overview-inner, .credits-inner, .more-inner, .footer-inner { max-width: 1440px; margin: 0 auto; }
+  h1 { font-weight: 900; font-size: clamp(44px, 6vw, 96px); line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 24px; }
+  .project-tags { font-weight: 400; font-size: 13px; letter-spacing: 0.08em; color: #C8C3B8; text-transform: uppercase; }
 
-    /* HERO */
-    .project-hero { margin-top: 65px; width: 100%; height: 60vh; overflow: hidden; }
-    .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .overview { padding: 32px 48px 96px; }
+  .section-label { font-weight: 500; font-size: 12px; letter-spacing: 0.22em; color: #C8C3B8; text-transform: uppercase; margin-bottom: 32px; }
+  .overview-grid { display: grid; grid-template-columns: minmax(180px, 0.35fr) minmax(0, 680px); gap: 48px; align-items: start; }
+  .overview-copy { display: flex; flex-direction: column; gap: 28px; }
+  .overview-copy p { font-weight: 400; font-size: 18px; line-height: 1.7; color: #000000; }
+  .overview-copy h2 { font-weight: 500; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #F00E0E; margin-bottom: -8px; }
 
-    /* INTRO */
-    .project-intro {
-      max-width: 1200px; margin: 0 auto;
-      padding: 80px 48px 64px;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
-    .project-title {
-      font-family: 'Satoshi', sans-serif; font-weight: 900;
-      font-size: clamp(32px, 5vw, 72px); line-height: 1.0; letter-spacing: -0.03em;
-      color: #000000; margin-bottom: 28px;
-    }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag {
-      font-family: 'Satoshi', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      color: #F00E0E; border: 1px solid #F00E0E; padding: 6px 14px;
-    }
+  .project-gallery { display: flex; flex-direction: column; gap: 6px; background: #FFFFFF; }
+  .project-gallery img { width: 100%; height: auto; object-fit: contain; display: block; }
 
-    /* BLOCO 1: texto + imagem */
-    .block-split {
-      max-width: 1200px; margin: 0 auto;
-      padding: 80px 48px;
-      display: grid; grid-template-columns: 60% 40%;
-      gap: 48px; align-items: start;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .block-split-text {}
-    .block-split-text p {
-      font-family: 'Satoshi', sans-serif; font-weight: 400;
-      font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75;
-      color: rgba(0,0,0,0.75);
-    }
-    .block-split-image { overflow: hidden; }
-    .block-split-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+  .credits { padding: 72px 48px 56px; }
+  .credits p { font-weight: 400; font-size: 13px; line-height: 1.8; letter-spacing: 0.04em; color: #C8C3B8; text-transform: uppercase; }
 
-    /* BLOCO 2: imagem fullwidth */
-    .block-full { width: 100%; overflow: hidden; }
-    .block-full img { width: 100%; max-height: 70vh; object-fit: cover; display: block; }
+  .more-projects { padding: 56px 48px 96px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .more-links { display: flex; flex-direction: column; gap: 14px; max-width: 680px; }
+  .more-links a { font-weight: 900; font-size: clamp(28px, 4vw, 64px); line-height: 1; letter-spacing: -0.04em; transition: color 0.2s ease; }
+  .more-links a:hover { color: #F00E0E; }
 
-    /* BLOCO 3: texto centralizado */
-    .block-centered {
-      max-width: 720px; margin: 0 auto;
-      padding: 96px 48px;
-    }
-    .block-centered h2 {
-      font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 11px;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #F00E0E; margin-bottom: 24px;
-    }
-    .block-centered p {
-      font-family: 'Satoshi', sans-serif; font-weight: 400;
-      font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75;
-      color: rgba(0,0,0,0.75);
-    }
+  footer { padding: 32px 48px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #C8C3B8; }
+  footer a:hover { color: #F00E0E; }
 
-    /* BLOCO 4: galeria */
-    .block-gallery {
-      background-color: #FFFFFF;
-      padding: 56px 48px 72px;
-    }
-    .gallery-label {
-      font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 10px;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: #C8C3B8; margin-bottom: 24px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .gallery-grid img {
-      width: 100%; height: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* BLOCO 5: créditos */
-    .project-credits {
-      max-width: 1200px; margin: 0 auto;
-      padding: 48px 48px 96px;
-      border-top: 1px solid rgba(0,0,0,0.08);
-    }
-    .credits-label {
-      font-family: 'Satoshi', sans-serif; font-size: 10px; font-weight: 500;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: #C8C3B8; margin-bottom: 16px;
-    }
-    .credits-list { display: flex; flex-direction: column; gap: 6px; }
-    .credits-list p { font-family: 'Satoshi', sans-serif; font-size: 13px; color: #C8C3B8; }
-    .credits-list strong { color: rgba(0,0,0,0.5); font-weight: 500; }
-
-    /* FOOTER */
-    footer {
-      background: #000000;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 32px 48px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    footer p { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
-    footer a { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
-    footer a:hover { color: #F00E0E; }
-
-    @media (max-width: 860px) {
-      header { padding: 16px 24px; }
-      .project-intro { padding: 56px 24px 48px; }
-      .block-split { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
-      .block-centered { padding: 64px 24px; }
-      .block-gallery { padding: 40px 24px 56px; }
-      .project-credits { padding: 40px 24px 72px; }
-      footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
-    }
-    @media (max-width: 640px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  @media (max-width: 760px) {
+    .project-header, .project-header.scrolled { padding: 18px 20px; }
+    .project-nav { gap: 16px; }
+    .project-title-block, .overview, .credits, .more-projects, footer { padding-left: 20px; padding-right: 20px; }
+    .overview-grid { grid-template-columns: 1fr; gap: 24px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
 <body>
+<div id="cursor"></div>
 
-  <header>
-    <a class="back-link" href="index.html#trabalhos">Voltar</a>
-  </header>
+<header class="project-header" id="projectHeader">
+  <a class="project-logo" href="index.html" data-cursor="hover">JÚLIA CARDOSO</a>
+  <nav class="project-nav">
+    <a href="info.html" data-cursor="hover">Info</a>
+    <a href="index.html#trabalhos" data-cursor="hover">← Projetos</a>
+  </nav>
+</header>
 
-  <div class="project-hero">
+<main>
+  <section class="project-hero" id="topo">
     <img src="assets/gcm-capa.png" alt="Campanha de Verão GCM" />
-  </div>
+  </section>
 
-  <div class="project-intro">
-    <h1 class="project-title">Campanha de Verão GCM</h1>
-    <div class="project-tags">
-      <span class="tag">Design de Marca</span>
-      <span class="tag">Direção de Arte</span>
-      <span class="tag">2025</span>
+  <section class="project-title-block">
+    <div class="project-title-inner">
+      <h1>Campanha de Verão GCM</h1>
+      <div class="project-tags">Design de Marca · Direção de Arte · 2025</div>
     </div>
-  </div>
+  </section>
 
-  <div class="block-split">
-    <div class="block-split-text">
-      <p>O Grupo Caru Moreno é uma clínica de dermatologia e estética avançada que tem como propósito realçar a essência natural de seus pacientes. Com um atendimento personalizado e procedimentos exclusivos, a clínica se destaca por oferecer uma experiência que une cuidado, excelência e acolhimento em cada etapa. Nesta campanha, o Grupo Caru Moreno buscou inspiração no espírito vibrante do verão. Cada protocolo foi cuidadosamente planejado e recebeu o nome de uma praia paradisíaca, remetendo a momentos de tranquilidade e renovação.</p>
+  <section class="overview">
+    <div class="overview-inner overview-grid">
+      <div class="section-label">// OVERVIEW</div>
+      <div class="overview-copy">
+        <p>O Grupo Caru Moreno é uma clínica de dermatologia e estética avançada que tem como propósito realçar a essência natural de seus pacientes. Com um atendimento personalizado e procedimentos exclusivos, a clínica se destaca por oferecer uma experiência que une cuidado, excelência e acolhimento em cada etapa. Nesta campanha, o Grupo Caru Moreno buscou inspiração no espírito vibrante do verão. Cada protocolo foi cuidadosamente planejado e recebeu o nome de uma praia paradisíaca, remetendo a momentos de tranquilidade e renovação.</p>
+        <h2>Conceito Criativo</h2>
+        <p>O ponto de partida para esta campanha foi a ideia de traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas sim despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual da campanha mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar, enquanto as formas orgânicas dos elementos gráficos evocam a fluidez das ondas.</p>
+      </div>
     </div>
-    <div class="block-split-image">
-      <img src="assets/gcm-02.png" alt="GCM campanha detalhe" />
+  </section>
+
+  <section class="project-gallery" aria-label="Galeria Campanha de Verão GCM">
+    <img src="assets/gcm-01.png" alt="Campanha de Verão GCM 01" loading="lazy" />
+    <img src="assets/gcm-02.png" alt="Campanha de Verão GCM 02" loading="lazy" />
+    <img src="assets/gcm-03.png" alt="Campanha de Verão GCM 03" loading="lazy" />
+    <img src="assets/gcm-04.png" alt="Campanha de Verão GCM 04" loading="lazy" />
+    <img src="assets/gcm-05.png" alt="Campanha de Verão GCM 05" loading="lazy" />
+    <img src="assets/gcm-06.jpg" alt="Campanha de Verão GCM 06" loading="lazy" />
+    <img src="assets/gcm-07.jpg" alt="Campanha de Verão GCM 07" loading="lazy" />
+    <img src="assets/gcm-08.jpg" alt="Campanha de Verão GCM 08" loading="lazy" />
+    <img src="assets/gcm-09.gif" alt="Campanha de Verão GCM 09" loading="lazy" />
+  </section>
+
+  <section class="credits">
+    <div class="credits-inner">
+      <p>Direção Geral: Glenda Maria · Texto: Luany Vasconcelos · Design: Júlia Mercés Cardoso</p>
     </div>
-  </div>
+  </section>
 
-  <div class="block-full">
-    <img src="assets/gcm-03.png" alt="GCM campanha fullwidth" />
-  </div>
-
-  <div class="block-centered">
-    <h2>Conceito Criativo</h2>
-    <p>O ponto de partida foi traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar.</p>
-  </div>
-
-  <div class="block-gallery">
-    <p class="gallery-label">Galeria</p>
-    <div class="gallery-grid">
-      <img src="assets/gcm-04.png" alt="GCM 04" loading="lazy" />
-      <img src="assets/gcm-05.png" alt="GCM 05" loading="lazy" />
-      <img src="assets/gcm-06.jpg" alt="GCM 06" loading="lazy" />
-      <img src="assets/gcm-07.jpg" alt="GCM 07" loading="lazy" />
-      <img src="assets/gcm-08.jpg" alt="GCM 08" loading="lazy" />
-      <img src="assets/gcm-09.gif" alt="GCM 09" loading="lazy" />
+  <section class="more-projects">
+    <div class="more-inner">
+      <div class="section-label">Mais Projetos</div>
+      <div class="more-links">
+        <a href="projeto-nena.html" data-cursor="hover">Identidade Visual Nena</a>
+        <a href="index.html#trabalhos" data-cursor="hover">Todos os projetos</a>
+      </div>
     </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Júlia Cardoso</span>
+    <a href="#topo" data-cursor="hover">Voltar ao topo</a>
   </div>
+</footer>
 
-  <div class="project-credits">
-    <p class="credits-label">Créditos</p>
-    <div class="credits-list">
-      <p><strong>Direção Geral:</strong> Glenda Maria</p>
-      <p><strong>Texto:</strong> Luany Vasconcelos</p>
-      <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 Júlia Cardoso</p>
-    <a href="index.html#trabalhos">Voltar ao portfólio</a>
-  </footer>
-
+<script>
+  (function() {
+    const header = document.getElementById('projectHeader');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  (function() {
+    const cursor = document.getElementById('cursor');
+    if (!cursor) return;
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  })();
+</script>
 </body>
 </html>

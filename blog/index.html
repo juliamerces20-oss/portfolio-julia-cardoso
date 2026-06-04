@@ -85,7 +85,7 @@
     font-family: 'Satoshi', sans-serif; font-weight: 500; font-size: 11px;
     text-transform: uppercase; letter-spacing: 2px;
     padding: 10px 18px; border: 1px solid rgba(0,0,0,0.2); color: rgba(0,0,0,0.55);
-    transition: all 0.2s ease; cursor: pointer;
+    transition: all 0.2s ease; cursor: none;
   }
   .filter-btn:hover { border-color: #000000; color: #000000; }
   .filter-btn.active { background: #F00E0E; border-color: #F00E0E; color: #FFFFFF; }
@@ -130,15 +130,14 @@
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div id="cursor"></div>
 
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav-brand" data-cursor="hover">JÚLIA CARDOSO</a>
   <div class="nav-links">
     <a href="../index.html#trabalhos" data-cursor="hover">trabalhos</a>
     <a href="index.html" class="active" data-cursor="hover">diário</a>
-    <a href="../index.html#sobre" data-cursor="hover">sobre</a>
+    <a href="../info.html" data-cursor="hover">info</a>
     <a href="../index.html#contato" data-cursor="hover">contato</a>
   </div>
 </nav>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Info — Júlia Cardoso</title>
+<meta name="description" content="Informações profissionais de Júlia Cardoso, diretora criativa, publicitária e programadora." />
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; cursor: none; }
+  html { scroll-behavior: smooth; background: #FFFFFF; }
+  body { background: #FFFFFF; color: #000000; font-family: 'Satoshi', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; cursor: none; transition: color 0.2s ease; }
+  button { font-family: inherit; border: none; cursor: none; }
+  ::selection { background: #F00E0E; color: #FFFFFF; }
+
+  #cursor { width: 16px; height: 16px; background: #F00E0E; border-radius: 50% !important; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease; }
+  #cursor.hover { width: 32px; height: 32px; opacity: 0.6; }
+
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 48px; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-weight: 500; font-size: 12px; color: #000000; letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links a:hover, .nav-links a.active { color: #F00E0E; }
+
+  .intro { min-height: 100vh; display: grid; grid-template-columns: 45% 55%; padding: 120px 48px 64px; gap: 64px; align-items: stretch; }
+  .intro-media { min-height: 80vh; overflow: hidden; background: #C8C3B8; }
+  .intro-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro-copy { display: flex; flex-direction: column; justify-content: space-between; padding: 8px 0; }
+  .intro-kicker { font-weight: 500; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #C8C3B8; }
+  .intro-copy h1 { font-weight: 900; font-size: clamp(56px, 7vw, 120px); line-height: 0.9; letter-spacing: -0.05em; max-width: 760px; }
+  .intro-copy p { font-weight: 400; font-size: 18px; line-height: 1.65; max-width: 480px; color: #000000; }
+
+  .data-section { padding: 96px 48px; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .data-grid { max-width: 1600px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; align-items: start; }
+  .data-col { display: flex; flex-direction: column; gap: 36px; }
+  .data-item { display: flex; flex-direction: column; gap: 10px; }
+  .data-label { font-weight: 500; letter-spacing: 0.22em; color: #C8C3B8; text-transform: uppercase; font-size: 11px; }
+  .data-value { font-weight: 400; font-size: 16px; color: #000000; line-height: 1.6; }
+  .data-value a:hover { color: #F00E0E; }
+
+  .closing { min-height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 96px 48px; }
+  .closing h2 { font-weight: 900; font-size: clamp(44px, 7vw, 120px); line-height: 0.92; letter-spacing: -0.05em; max-width: 1100px; }
+
+  .cta { padding: 0 48px 120px; display: flex; justify-content: center; }
+  .cta a { display: inline-block; background: #F00E0E; color: #FFFFFF; font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 40px; transition: background 0.2s ease, color 0.2s ease; }
+  .cta a:hover { background: #000000; color: #FFFFFF; }
+
+  .footer { background: #000000; padding: 96px 48px 32px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .footer-inner { max-width: 1600px; margin: 0 auto; }
+  .footer-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.12); align-items: start; }
+  .footer-label { font-weight: 500; font-size: 13px; color: #FFFFFF; letter-spacing: 0.3px; }
+  .footer-content { font-weight: 400; font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.55); }
+  .footer-content ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .footer-content a { color: rgba(255,255,255,0.55); }
+  .footer-content a:hover { color: #F00E0E; }
+  .footer-bottom { display: flex; justify-content: space-between; gap: 32px; padding-top: 32px; font-size: 13px; color: rgba(255,255,255,0.4); }
+
+  @media (max-width: 920px) {
+    .intro { grid-template-columns: 1fr; padding: 104px 32px 56px; }
+    .intro-media { min-height: 65vh; }
+    .intro-copy { gap: 40px; }
+    .data-grid { grid-template-columns: 1fr; }
+    .footer-row { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 640px) {
+    .nav { padding: 18px 20px; }
+    .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { font-size: 11px; }
+    .intro, .data-section, .closing, .cta, .footer { padding-left: 20px; padding-right: 20px; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-links">
+    <a href="index.html#trabalhos" data-cursor="hover">trabalhos</a>
+    <a href="index.html#reels" data-cursor="hover">reels</a>
+    <a href="index.html#posts" data-cursor="hover">posts</a>
+    <a href="index.html#sistemas" data-cursor="hover">ia</a>
+    <a href="index.html#diario" data-cursor="hover">diário</a>
+    <a href="info.html" class="active" data-cursor="hover">info</a>
+    <a href="index.html#contato" data-cursor="hover">contato</a>
+  </div>
+</nav>
+
+<main>
+  <section class="intro">
+    <figure class="intro-media">
+      <img src="assets/julia-quemeusou.png" alt="Júlia Cardoso" />
+    </figure>
+    <div class="intro-copy">
+      <div class="intro-kicker">Info</div>
+      <h1>Júlia Cardoso.</h1>
+      <p>Júlia Cardoso. Diretora criativa, publicitária, programadora. Construo marcas com estratégia e estética, sem separar uma coisa da outra. Da Zona Norte do Rio pro mundo.</p>
+    </div>
+  </section>
+
+  <section class="data-section">
+    <div class="data-grid">
+      <div class="data-col">
+        <div class="data-item">
+          <div class="data-label">Localização</div>
+          <div class="data-value">Rio de Janeiro, Brasil</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Formação</div>
+          <div class="data-value">Publicidade e Propaganda</div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Atuando desde</div>
+          <div class="data-value">2020</div>
+        </div>
+      </div>
+      <div class="data-col">
+        <div class="data-item">
+          <div class="data-label">Serviços</div>
+          <div class="data-value">Identidade Visual<br>Branding Estratégico<br>Direção Criativa<br>Sistemas com IA<br>Edição de Vídeo</div>
+        </div>
+      </div>
+      <div class="data-col">
+        <div class="data-item">
+          <div class="data-label">Contato</div>
+          <div class="data-value">
+            <a href="https://www.instagram.com/juliacardoso.dsgn" target="_blank" rel="noopener" data-cursor="hover">@juliacardoso.dsgn</a><br>
+            <a href="https://www.linkedin.com/in/j%C3%BAlia-merc%C3%AAs/" target="_blank" rel="noopener" data-cursor="hover">linkedin.com/in/júlia-mercês</a><br>
+            <a href="https://www.behance.net/juliaxmerces" target="_blank" rel="noopener" data-cursor="hover">behance.net/juliaxmerces</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Marcas que recusam ser medianas.</h2>
+  </section>
+
+  <section class="cta">
+    <a href="index.html#trabalhos" data-cursor="hover">Ver Projetos</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-row">
+      <div class="footer-label">Projetos selecionados</div>
+      <div class="footer-content">
+        <ul>
+          <li><a href="projeto-gcm.html" data-cursor="hover">Campanha de Verão GCM · Design de Marca</a></li>
+          <li><a href="projeto-nena.html" data-cursor="hover">Identidade Visual Nena · Branding</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer-label">Links</div>
+      <div class="footer-content">
+        <ul>
+          <li><a href="index.html" data-cursor="hover">Início</a></li>
+          <li><a href="blog/index.html" data-cursor="hover">Diário</a></li>
+          <li><a href="index.html#contato" data-cursor="hover">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Júlia Cardoso</span>
+      <span>Rio de Janeiro · Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const cursor = document.getElementById('cursor');
+    if (!cursor) return;
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ===================== BLOG SHARED STYLES ===================== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; cursor: none; }
 
 html { scroll-behavior: smooth; background: #FFFFFF; scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
@@ -20,15 +20,20 @@ button { font-family: inherit; background: none; border: none; cursor: none; }
 ::selection { background: #F00E0E; color: #FFFFFF; }
 
 /* ===== CURSOR ===== */
-.cursor-dot, .cursor-ring {
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%, -50%); will-change: transform;
+#cursor {
+  width: 16px;
+  height: 16px;
+  background: #F00E0E;
+  border-radius: 50% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
-.cursor-dot { width: 10px; height: 10px; background: #F00E0E; }
-.cursor-ring { width: 40px; height: 40px; border: 1px solid #F00E0E; transition: width 0.25s ease, height 0.25s ease, background 0.25s ease; }
-.cursor-ring.hover { width: 60px; height: 60px; background: rgba(240,14,14,0.08); }
-@media (max-width: 768px) { body { cursor: auto; } a, button { cursor: pointer; } .cursor-dot, .cursor-ring { display: none; } }
+#cursor.hover { width: 32px; height: 32px; opacity: 0.6; }
 
 /* ===== NAV ===== */
 .nav {
