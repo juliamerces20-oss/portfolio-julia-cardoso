@@ -1,0 +1,8 @@
+{
+  "name": "portfolio-julia-cardoso",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-post": "node generate-post.js"
+  }
+}
