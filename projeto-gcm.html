@@ -99,10 +99,10 @@
       color: rgba(0,0,0,0.75);
     }
 
-    /* BLOCO 4: galeria */
-    .block-gallery {
+    /* BLOCO 4a: galeria moodboard (wireframe + gif) */
+    .gallery-moodboard {
       background-color: #F5E6D0;
-      padding: 56px 48px 72px;
+      padding: 56px 48px 48px;
     }
     .gallery-label {
       font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 10px;
@@ -110,24 +110,33 @@
       color: #A08060; margin-bottom: 32px;
       padding-top: 0;
     }
-    .gallery-grid {
+    .gallery-grid-moodboard {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 240px;
+      grid-template-columns: 3fr 1fr;
       gap: 14px;
+      height: 360px;
     }
-    .gallery-grid img {
+    .gallery-grid-moodboard img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       display: block;
       border-radius: 12px;
     }
-    .gallery-grid img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-    .gallery-grid img:nth-child(2) { grid-column: span 1; }
-    .gallery-grid img:nth-child(3) { grid-column: span 1; }
-    .gallery-grid img:nth-child(4) { grid-column: span 2; }
-    .gallery-grid img:nth-child(5) { grid-column: span 2; }
-    .gallery-grid img:nth-child(6) { grid-column: span 2; }
+
+    /* BLOCO 4b: galeria normal */
+    .gallery-normal {
+      background-color: #FFFFFF;
+      padding: 0 48px 72px;
+    }
+    .gallery-grid-normal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .gallery-grid-normal img {
+      width: 100%; height: auto;
+      display: block;
+    }
 
     /* BLOCO 5: créditos */
     .project-credits {
@@ -160,14 +169,15 @@
       .project-intro { padding: 56px 24px 48px; }
       .block-split { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
       .block-centered { padding: 64px 24px; }
-      .block-gallery { padding: 40px 24px 56px; }
+      .gallery-moodboard { padding: 40px 24px 32px; }
+      .gallery-normal { padding: 0 24px 56px; }
       .project-credits { padding: 40px 24px 72px; }
       footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
     }
     @media (max-width: 640px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-      .gallery-grid img:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-      .gallery-grid img:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+      .gallery-grid-moodboard { grid-template-columns: 1fr; height: auto; }
+      .gallery-grid-moodboard img { height: 220px; }
+      .gallery-grid-normal { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -208,15 +218,20 @@
     <p>O ponto de partida foi traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar.</p>
   </div>
 
-  <div class="block-gallery">
+  <div class="gallery-moodboard">
     <p class="gallery-label">Galeria</p>
-    <div class="gallery-grid">
-      <img src="assets/gcm-04.png" alt="GCM 04" loading="lazy" />
+    <div class="gallery-grid-moodboard">
+      <img src="assets/gcm-04.png" alt="Wireframe tipografia VERÃO" loading="lazy" />
+      <img src="assets/gcm-09.gif" alt="GCM animação" loading="lazy" />
+    </div>
+  </div>
+
+  <div class="gallery-normal">
+    <div class="gallery-grid-normal">
       <img src="assets/gcm-05.png" alt="GCM 05" loading="lazy" />
       <img src="assets/gcm-06.jpg" alt="GCM 06" loading="lazy" />
       <img src="assets/gcm-07.jpg" alt="GCM 07" loading="lazy" />
       <img src="assets/gcm-08.jpg" alt="GCM 08" loading="lazy" />
-      <img src="assets/gcm-09.gif" alt="GCM 09" loading="lazy" />
     </div>
   </div>
 
