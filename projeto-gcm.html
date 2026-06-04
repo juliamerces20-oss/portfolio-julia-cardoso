@@ -9,229 +9,147 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
 
-    :root {
-      --red: #F00E0E;
-      --ink: #000000;
-      --bg: #FFFFFF;
-      --muted: rgba(0,0,0,0.45);
-    }
-
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: #FFFFFF; }
 
     body {
-      background: var(--bg);
-      color: var(--ink);
+      background: #FFFFFF;
+      color: #000000;
       font-family: 'Satoshi', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HEADER ── */
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    ::selection { background: #F00E0E; color: #FFFFFF; }
+
+    /* HEADER */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 48px;
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       background: rgba(255,255,255,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-
     .back-link {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+      font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 500;
+      color: #000000; letter-spacing: 0.04em; text-transform: uppercase;
+      opacity: 0.6; transition: opacity 0.2s;
     }
-    .back-link:hover { opacity: 1; }
     .back-link::before { content: "←  "; }
+    .back-link:hover { opacity: 1; }
 
-    /* ── HERO ── */
-    .project-hero {
-      margin-top: 65px;
-      width: 100%;
-      max-height: 60vh;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 60vh;
-      object-fit: cover;
-      display: block;
-    }
+    /* HERO */
+    .project-hero { margin-top: 65px; width: 100%; height: 60vh; overflow: hidden; }
+    .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ── CONTENT ── */
-    .project-content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 48px 120px;
+    /* INTRO */
+    .project-intro {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 48px 64px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-
-    .project-meta {
-      margin-bottom: 64px;
-    }
-
     .project-title {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 900;
-      font-size: clamp(28px, 4vw, 56px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      color: var(--ink);
+      font-family: 'Satoshi', sans-serif; font-weight: 900;
+      font-size: clamp(32px, 5vw, 72px); line-height: 1.0; letter-spacing: -0.03em;
+      color: #000000; margin-bottom: 28px;
     }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    .project-tags { display: flex; flex-wrap: wrap; gap: 10px; }
     .tag {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--red);
-      border: 1px solid var(--red);
-      padding: 6px 14px;
+      font-family: 'Satoshi', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #F00E0E; border: 1px solid #F00E0E; padding: 6px 14px;
     }
 
-    /* ── TEXT BLOCKS ── */
-    .project-body {
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
-      margin-bottom: 80px;
+    /* BLOCO 1: texto + imagem */
+    .block-split {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 48px;
+      display: grid; grid-template-columns: 60% 40%;
+      gap: 48px; align-items: start;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-
-    .text-block h2 {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .text-block p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 17px;
-      line-height: 1.75;
+    .block-split-text {}
+    .block-split-text p {
+      font-family: 'Satoshi', sans-serif; font-weight: 400;
+      font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75;
       color: rgba(0,0,0,0.75);
-      max-width: 680px;
+    }
+    .block-split-image { overflow: hidden; }
+    .block-split-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+
+    /* BLOCO 2: imagem fullwidth */
+    .block-full { width: 100%; overflow: hidden; }
+    .block-full img { width: 100%; max-height: 70vh; object-fit: cover; display: block; }
+
+    /* BLOCO 3: texto centralizado */
+    .block-centered {
+      max-width: 720px; margin: 0 auto;
+      padding: 96px 48px;
+    }
+    .block-centered h2 {
+      font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #F00E0E; margin-bottom: 24px;
+    }
+    .block-centered p {
+      font-family: 'Satoshi', sans-serif; font-weight: 400;
+      font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75;
+      color: rgba(0,0,0,0.75);
     }
 
-    /* ── CREDITS ── */
-    .project-credits {
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-top: 40px;
-      margin-bottom: 80px;
+    /* BLOCO 4: galeria */
+    .block-gallery {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 48px 96px;
     }
-
-    .credits-label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.4);
-      margin-bottom: 20px;
-    }
-
-    .credits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .credits-list p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 14px;
-      color: rgba(0,0,0,0.65);
-    }
-
-    .credits-list strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    /* ── GALLERY ── */
-    .gallery-section {
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-top: 64px;
-    }
-
     .gallery-label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.4);
-      margin-bottom: 32px;
+      font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #C8C3B8; margin-bottom: 24px;
+      padding-top: 0;
     }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ── FOOTER ── */
-    footer {
+    /* BLOCO 5: créditos */
+    .project-credits {
+      max-width: 1200px; margin: 0 auto;
+      padding: 48px 48px 96px;
       border-top: 1px solid rgba(0,0,0,0.08);
-      padding: 40px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: 0 auto;
     }
-
-    footer p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      color: rgba(0,0,0,0.35);
-      letter-spacing: 0.04em;
+    .credits-label {
+      font-family: 'Satoshi', sans-serif; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #C8C3B8; margin-bottom: 16px;
     }
+    .credits-list { display: flex; flex-direction: column; gap: 6px; }
+    .credits-list p { font-family: 'Satoshi', sans-serif; font-size: 13px; color: #C8C3B8; }
+    .credits-list strong { color: rgba(0,0,0,0.5); font-weight: 500; }
 
-    footer a {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      color: rgba(0,0,0,0.5);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+    /* FOOTER */
+    footer {
+      background: #000000;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 32px 48px;
+      display: flex; align-items: center; justify-content: space-between;
     }
+    footer p { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
+    footer a { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    footer a:hover { color: #F00E0E; }
 
-    footer a:hover { color: var(--red); }
-
-    @media (max-width: 720px) {
+    @media (max-width: 860px) {
       header { padding: 16px 24px; }
-      .project-content { padding: 48px 24px 80px; }
+      .project-intro { padding: 56px 24px 48px; }
+      .block-split { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
+      .block-centered { padding: 64px 24px; }
+      .block-gallery { padding: 0 24px 72px; }
+      .project-credits { padding: 40px 24px 72px; }
+      footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 640px) {
       .gallery-grid { grid-template-columns: 1fr; }
-      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
@@ -245,57 +163,58 @@
     <img src="assets/gcm-capa.png" alt="Campanha de Verão GCM" />
   </div>
 
-  <main class="project-content">
-
-    <div class="project-meta">
-      <h1 class="project-title">Campanha de Verão GCM</h1>
-      <div class="project-tags">
-        <span class="tag">Design de Marca</span>
-        <span class="tag">Direção de Arte</span>
-        <span class="tag">2025</span>
-      </div>
+  <div class="project-intro">
+    <h1 class="project-title">Campanha de Verão GCM</h1>
+    <div class="project-tags">
+      <span class="tag">Design de Marca</span>
+      <span class="tag">Direção de Arte</span>
+      <span class="tag">2025</span>
     </div>
+  </div>
 
-    <div class="project-body">
-      <div class="text-block">
-        <p>O Grupo Caru Moreno é uma clínica de dermatologia e estética avançada que tem como propósito realçar a essência natural de seus pacientes. Com um atendimento personalizado e procedimentos exclusivos, a clínica se destaca por oferecer uma experiência que une cuidado, excelência e acolhimento em cada etapa. Nesta campanha, o Grupo Caru Moreno buscou inspiração no espírito vibrante do verão. Cada protocolo foi cuidadosamente planejado e recebeu o nome de uma praia paradisíaca, remetendo a momentos de tranquilidade e renovação.</p>
-      </div>
-
-      <div class="text-block">
-        <h2>Conceito Criativo</h2>
-        <p>O ponto de partida para esta campanha foi a ideia de traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas sim despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual da campanha mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar, enquanto as formas orgânicas dos elementos gráficos evocam a fluidez das ondas.</p>
-      </div>
+  <div class="block-split">
+    <div class="block-split-text">
+      <p>O Grupo Caru Moreno é uma clínica de dermatologia e estética avançada que tem como propósito realçar a essência natural de seus pacientes. Com um atendimento personalizado e procedimentos exclusivos, a clínica se destaca por oferecer uma experiência que une cuidado, excelência e acolhimento em cada etapa. Nesta campanha, o Grupo Caru Moreno buscou inspiração no espírito vibrante do verão. Cada protocolo foi cuidadosamente planejado e recebeu o nome de uma praia paradisíaca, remetendo a momentos de tranquilidade e renovação.</p>
     </div>
-
-    <div class="project-credits">
-      <p class="credits-label">Créditos</p>
-      <div class="credits-list">
-        <p><strong>Direção Geral:</strong> Glenda Maria</p>
-        <p><strong>Texto:</strong> Luany Vasconcelos</p>
-        <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
-      </div>
+    <div class="block-split-image">
+      <img src="assets/gcm-01.png" alt="GCM campanha detalhe" />
     </div>
+  </div>
 
-    <div class="gallery-section">
-      <p class="gallery-label">Galeria</p>
-      <div class="gallery-grid">
-        <img src="assets/gcm-01.png" alt="GCM 01" loading="lazy" />
-        <img src="assets/gcm-02.png" alt="GCM 02" loading="lazy" />
-        <img src="assets/gcm-03.png" alt="GCM 03" loading="lazy" />
-        <img src="assets/gcm-04.png" alt="GCM 04" loading="lazy" />
-        <img src="assets/gcm-05.png" alt="GCM 05" loading="lazy" />
-        <img src="assets/gcm-06.jpg" alt="GCM 06" loading="lazy" />
-        <img src="assets/gcm-07.jpg" alt="GCM 07" loading="lazy" />
-        <img src="assets/gcm-08.jpg" alt="GCM 08" loading="lazy" />
-        <img src="assets/gcm-09.gif" alt="GCM 09" loading="lazy" />
-      </div>
+  <div class="block-full">
+    <img src="assets/gcm-02.png" alt="GCM campanha fullwidth" />
+  </div>
+
+  <div class="block-centered">
+    <h2>Conceito Criativo</h2>
+    <p>O ponto de partida foi traduzir o verão em uma experiência sensorial completa, indo além da estética tradicional. O desafio não era apenas criar algo bonito, mas despertar sentimentos: o calor do sol na pele, a brisa leve de uma praia paradisíaca e o frescor de momentos de renovação. Cada protocolo foi cuidadosamente nomeado com base em praias icônicas, criando uma conexão emocional instantânea com o público. A estética visual mistura tons quentes e suaves, remetendo ao pôr do sol e ao brilho do mar.</p>
+  </div>
+
+  <div class="block-gallery">
+    <p class="gallery-label">Galeria</p>
+    <div class="gallery-grid">
+      <img src="assets/gcm-03.png" alt="GCM 03" loading="lazy" />
+      <img src="assets/gcm-04.png" alt="GCM 04" loading="lazy" />
+      <img src="assets/gcm-05.png" alt="GCM 05" loading="lazy" />
+      <img src="assets/gcm-06.jpg" alt="GCM 06" loading="lazy" />
+      <img src="assets/gcm-07.jpg" alt="GCM 07" loading="lazy" />
+      <img src="assets/gcm-08.jpg" alt="GCM 08" loading="lazy" />
+      <img src="assets/gcm-09.gif" alt="GCM 09" loading="lazy" />
     </div>
+  </div>
 
-  </main>
+  <div class="project-credits">
+    <p class="credits-label">Créditos</p>
+    <div class="credits-list">
+      <p><strong>Direção Geral:</strong> Glenda Maria</p>
+      <p><strong>Texto:</strong> Luany Vasconcelos</p>
+      <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 Júlia Cardoso</p>
-    <a href="index.html#trabalhos">← Voltar ao portfólio</a>
+    <a href="index.html#trabalhos">Voltar ao portfólio</a>
   </footer>
 
 </body>

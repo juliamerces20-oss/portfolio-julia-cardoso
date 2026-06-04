@@ -9,230 +9,127 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
 
-    :root {
-      --red: #F00E0E;
-      --ink: #000000;
-      --bg: #FFFFFF;
-      --muted: rgba(0,0,0,0.45);
-    }
-
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: #FFFFFF; }
 
     body {
-      background: var(--bg);
-      color: var(--ink);
+      background: #FFFFFF;
+      color: #000000;
       font-family: 'Satoshi', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HEADER ── */
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    ::selection { background: #F00E0E; color: #FFFFFF; }
+
+    /* HEADER */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 20px 48px;
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       background: rgba(255,255,255,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-
     .back-link {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+      font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 500;
+      color: #000000; letter-spacing: 0.04em; text-transform: uppercase;
+      opacity: 0.6; transition: opacity 0.2s;
     }
-    .back-link:hover { opacity: 1; }
     .back-link::before { content: "←  "; }
+    .back-link:hover { opacity: 1; }
 
-    /* ── HERO ── */
-    .project-hero {
-      margin-top: 65px;
-      width: 100%;
-      max-height: 60vh;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 60vh;
-      object-fit: cover;
-      display: block;
-    }
+    /* HERO */
+    .project-hero { margin-top: 65px; width: 100%; height: 60vh; overflow: hidden; }
+    .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ── CONTENT ── */
-    .project-content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 48px 120px;
+    /* INTRO */
+    .project-intro {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 48px 64px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-
-    .project-meta {
-      margin-bottom: 64px;
-    }
-
     .project-title {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 900;
-      font-size: clamp(28px, 4vw, 56px);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      color: var(--ink);
+      font-family: 'Satoshi', sans-serif; font-weight: 900;
+      font-size: clamp(32px, 5vw, 72px); line-height: 1.0; letter-spacing: -0.03em;
+      color: #000000; margin-bottom: 28px;
     }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
+    .project-tags { display: flex; flex-wrap: wrap; gap: 10px; }
     .tag {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--red);
-      border: 1px solid var(--red);
-      padding: 6px 14px;
+      font-family: 'Satoshi', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #F00E0E; border: 1px solid #F00E0E; padding: 6px 14px;
     }
 
-    /* ── TEXT BLOCKS ── */
-    .project-body {
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
-      margin-bottom: 80px;
+    /* BLOCO 1: texto + imagem */
+    .block-split {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 48px;
+      display: grid; grid-template-columns: 60% 40%;
+      gap: 48px; align-items: start;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-
-    .text-block h2 {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .text-block p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 17px;
-      line-height: 1.75;
+    .block-split-text p {
+      font-family: 'Satoshi', sans-serif; font-weight: 400;
+      font-size: clamp(17px, 1.4vw, 20px); line-height: 1.75;
       color: rgba(0,0,0,0.75);
-      max-width: 680px;
     }
+    .block-split-image { overflow: hidden; }
+    .block-split-image img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 
-    /* ── CREDITS ── */
-    .project-credits {
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-top: 40px;
-      margin-bottom: 80px;
+    /* BLOCO 2: imagem fullwidth */
+    .block-full { width: 100%; overflow: hidden; }
+    .block-full img { width: 100%; max-height: 70vh; object-fit: cover; display: block; }
+
+    /* BLOCO 3: galeria */
+    .block-gallery {
+      max-width: 1200px; margin: 0 auto;
+      padding: 64px 48px 96px;
     }
-
-    .credits-label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.4);
-      margin-bottom: 20px;
-    }
-
-    .credits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .credits-list p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 14px;
-      color: rgba(0,0,0,0.65);
-    }
-
-    .credits-list strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    /* ── GALLERY ── */
-    .gallery-section {
-      border-top: 1px solid rgba(0,0,0,0.1);
-      padding-top: 64px;
-    }
-
     .gallery-label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.4);
-      margin-bottom: 32px;
+      font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #C8C3B8; margin-bottom: 24px;
     }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ── FOOTER ── */
-    footer {
+    /* CRÉDITOS */
+    .project-credits {
+      max-width: 1200px; margin: 0 auto;
+      padding: 48px 48px 96px;
       border-top: 1px solid rgba(0,0,0,0.08);
-      padding: 40px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: 0 auto;
     }
-
-    footer p {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      color: rgba(0,0,0,0.35);
-      letter-spacing: 0.04em;
+    .credits-label {
+      font-family: 'Satoshi', sans-serif; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #C8C3B8; margin-bottom: 16px;
     }
+    .credits-list { display: flex; flex-direction: column; gap: 6px; }
+    .credits-list p { font-family: 'Satoshi', sans-serif; font-size: 13px; color: #C8C3B8; }
+    .credits-list strong { color: rgba(0,0,0,0.5); font-weight: 500; }
 
-    footer a {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 12px;
-      color: rgba(0,0,0,0.5);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+    /* FOOTER */
+    footer {
+      background: #000000;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 32px 48px;
+      display: flex; align-items: center; justify-content: space-between;
     }
+    footer p { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
+    footer a { font-family: 'Satoshi', sans-serif; font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    footer a:hover { color: #F00E0E; }
 
-    footer a:hover { color: var(--red); }
-
-    @media (max-width: 720px) {
+    @media (max-width: 860px) {
       header { padding: 16px 24px; }
-      .project-content { padding: 48px 24px 80px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+      .project-intro { padding: 56px 24px 48px; }
+      .block-split { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
+      .block-gallery { padding: 48px 24px 72px; }
+      .project-credits { padding: 40px 24px 72px; }
+      footer { padding: 28px 24px; flex-direction: column; gap: 12px; text-align: center; }
     }
+    @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -245,50 +142,51 @@
     <img src="assets/nena-capa.png" alt="Identidade Visual Nena" />
   </div>
 
-  <main class="project-content">
-
-    <div class="project-meta">
-      <h1 class="project-title">Identidade Visual Nena</h1>
-      <div class="project-tags">
-        <span class="tag">Identidade Visual</span>
-        <span class="tag">Branding</span>
-        <span class="tag">2024</span>
-      </div>
+  <div class="project-intro">
+    <h1 class="project-title">Identidade Visual Nena</h1>
+    <div class="project-tags">
+      <span class="tag">Identidade Visual</span>
+      <span class="tag">Branding</span>
+      <span class="tag">2024</span>
     </div>
+  </div>
 
-    <div class="project-body">
-      <div class="text-block">
-        <p>Nena é como os pais da Nádia se referiam um ao outro. Esta marca nasce do desejo de levar artesanalmente o cuidado e delicadeza que sua mãe tratava os afazeres do dia a dia, principalmente a comida. Tia Nádia, como gosta de ser chamada, fundou e é responsável por cada receita, coloca toda sua técnica em cada rótulo que chega a sua mesa. Este produto é também história.</p>
-      </div>
+  <div class="block-split">
+    <div class="block-split-text">
+      <p>Nena é como os pais da Nádia se referiam um ao outro. Esta marca nasce do desejo de levar artesanalmente o cuidado e delicadeza que sua mãe tratava os afazeres do dia a dia, principalmente a comida. Tia Nádia, como gosta de ser chamada, fundou e é responsável por cada receita. Coloca toda sua técnica em cada rótulo que chega à mesa. Este produto é também história.</p>
     </div>
-
-    <div class="project-credits">
-      <p class="credits-label">Créditos</p>
-      <div class="credits-list">
-        <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
-      </div>
+    <div class="block-split-image">
+      <img src="assets/nena-01.png" alt="Nena detalhe" />
     </div>
+  </div>
 
-    <div class="gallery-section">
-      <p class="gallery-label">Galeria</p>
-      <div class="gallery-grid">
-        <img src="assets/nena-01.png" alt="Nena 01" loading="lazy" />
-        <img src="assets/nena-02.png" alt="Nena 02" loading="lazy" />
-        <img src="assets/nena-03.png" alt="Nena 03" loading="lazy" />
-        <img src="assets/nena-04.png" alt="Nena 04" loading="lazy" />
-        <img src="assets/nena-05.png" alt="Nena 05" loading="lazy" />
-        <img src="assets/nena-06.png" alt="Nena 06" loading="lazy" />
-        <img src="assets/nena-07.png" alt="Nena 07" loading="lazy" />
-        <img src="assets/nena-08.png" alt="Nena 08" loading="lazy" />
-        <img src="assets/nena-09.jpg" alt="Nena 09" loading="lazy" />
-      </div>
+  <div class="block-full">
+    <img src="assets/nena-02.png" alt="Nena fullwidth" />
+  </div>
+
+  <div class="block-gallery">
+    <p class="gallery-label">Galeria</p>
+    <div class="gallery-grid">
+      <img src="assets/nena-03.png" alt="Nena 03" loading="lazy" />
+      <img src="assets/nena-04.png" alt="Nena 04" loading="lazy" />
+      <img src="assets/nena-05.png" alt="Nena 05" loading="lazy" />
+      <img src="assets/nena-06.png" alt="Nena 06" loading="lazy" />
+      <img src="assets/nena-07.png" alt="Nena 07" loading="lazy" />
+      <img src="assets/nena-08.png" alt="Nena 08" loading="lazy" />
+      <img src="assets/nena-09.jpg" alt="Nena 09" loading="lazy" />
     </div>
+  </div>
 
-  </main>
+  <div class="project-credits">
+    <p class="credits-label">Créditos</p>
+    <div class="credits-list">
+      <p><strong>Design:</strong> Júlia Mercés Cardoso</p>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 Júlia Cardoso</p>
-    <a href="index.html#trabalhos">← Voltar ao portfólio</a>
+    <a href="index.html#trabalhos">Voltar ao portfólio</a>
   </footer>
 
 </body>
