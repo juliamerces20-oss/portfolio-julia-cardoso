@@ -452,6 +452,27 @@
   .post-info-title { font-family: 'Satoshi', sans-serif; font-weight: 500; font-size: 12px; color: rgba(0,0,0,0.8); letter-spacing: 0.5px; line-height: 1.3; flex: 1; }
   .post-info-engagement { font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 11px; color: #F00E0E; letter-spacing: 1px; white-space: nowrap; }
 
+  /* ===== POST: direct img + carousel ===== */
+  .post-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .post-carousel { width: 100%; height: 100%; position: relative; overflow: hidden; }
+  .post-carousel-slides { display: flex; height: 100%; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+  .post-carousel-slide { flex: 0 0 100%; height: 100%; }
+  .post-carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .post-carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 6;
+    background: rgba(255,255,255,0.9); border: none;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #F00E0E;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .post-carousel-btn:hover { background: #F00E0E; color: #FFFFFF; }
+  .post-carousel-btn.prev { left: 8px; }
+  .post-carousel-btn.next { right: 8px; }
+  .post-carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 3px; z-index: 6; }
+  .post-carousel-dot { width: 16px; height: 3px; background: rgba(255,255,255,0.45); transition: background 0.2s ease; }
+  .post-carousel-dot.active { background: #F00E0E; }
+
   /* ===== AI SYSTEMS (2 itens: side by side) ===== */
   .systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 24px; }
   .system-card { display: flex; flex-direction: column; gap: 24px; padding: 32px; border: 1px solid #C8C3B8; background: #FFFFFF; transition: border-color 0.3s ease, background 0.3s ease; position: relative; }
@@ -846,45 +867,76 @@
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx11/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
-          <span class="post-frame-meta">CARROSSEL · 8</span>
+          <img src="assets/posts/post-01_1.jpg" alt="Post Glenda Maria Lab" loading="lazy" />
+          <span class="post-frame-meta">FEED</span>
         </div>
         <div class="post-info">
           <div class="post-info-title">"Como nasce uma identidade"</div>
-          <div class="post-info-engagement">EMBED</div>
+          <div class="post-info-engagement">GLENDA LAB</div>
         </div>
       </div>
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx12/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
+          <img src="assets/posts/post-02_1.jpg" alt="Post Samba Pra Roda" loading="lazy" />
           <span class="post-frame-meta">FEED</span>
         </div>
         <div class="post-info">
           <div class="post-info-title">"Estética não é estratégia"</div>
-          <div class="post-info-engagement">EMBED</div>
+          <div class="post-info-engagement">SAMBA PRA RODA</div>
         </div>
       </div>
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx13/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
-          <span class="post-frame-meta">CARROSSEL · 5</span>
+          <div class="post-carousel">
+            <div class="post-carousel-slides">
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_1.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_2.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_3.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_4.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_5.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_6.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_7.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-03_8.jpg" alt="" loading="lazy" /></div>
+            </div>
+            <button class="post-carousel-btn prev" aria-label="Anterior"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <button class="post-carousel-btn next" aria-label="Próximo"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <div class="post-carousel-dots">
+              <div class="post-carousel-dot active"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div>
+            </div>
+          </div>
+          <span class="post-frame-meta">CARROSSEL · 8</span>
         </div>
         <div class="post-info">
           <div class="post-info-title">"3 erros de quem começa branding"</div>
-          <div class="post-info-engagement">EMBED</div>
+          <div class="post-info-engagement">DRA. CARU MORENO</div>
         </div>
       </div>
 
       <div class="post-card reveal" data-cursor="hover">
         <div class="post-frame">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DBxxxx14/" data-instgrm-version="14" style="background:#F5F5F5; border:0; border-radius:0; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;"></blockquote>
-          <span class="post-frame-meta">FEED</span>
+          <div class="post-carousel">
+            <div class="post-carousel-slides">
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_1.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_2.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_3.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_4.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_5.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_6.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-04_7.jpg" alt="" loading="lazy" /></div>
+            </div>
+            <button class="post-carousel-btn prev" aria-label="Anterior"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <button class="post-carousel-btn next" aria-label="Próximo"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <div class="post-carousel-dots">
+              <div class="post-carousel-dot active"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div>
+            </div>
+          </div>
+          <span class="post-frame-meta">CARROSSEL · 7</span>
         </div>
         <div class="post-info">
           <div class="post-info-title">"Manifesto de marca"</div>
-          <div class="post-info-engagement">EMBED</div>
+          <div class="post-info-engagement">DRA. CARU MORENO</div>
         </div>
       </div>
 
@@ -1119,18 +1171,32 @@
     closeBtn.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('active')) closeLightbox(); });
     overlay.addEventListener('click', e => { if (e.target === overlay) closeLightbox(); });
-    document.querySelectorAll('.post-frame').forEach(el => {
-      el.style.cursor = 'pointer';
-      el.addEventListener('click', () => { const bq = el.querySelector('.instagram-media'); if (bq) { const url = bq.getAttribute('data-instgrm-permalink'); if (url) openLightbox(url); } });
-    });
   })();
 
-  /* INSTAGRAM EMBEDS */
+  /* POST CAROUSELS */
   (function() {
-    const script = document.createElement('script');
-    script.src = '//www.instagram.com/embed.js'; script.async = true;
-    document.body.appendChild(script);
-    script.onload = () => { if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process(); };
+    document.querySelectorAll('.post-carousel').forEach(carousel => {
+      const slides = carousel.querySelector('.post-carousel-slides');
+      const dots = carousel.querySelectorAll('.post-carousel-dot');
+      const total = carousel.querySelectorAll('.post-carousel-slide').length;
+      let current = 0;
+
+      function goTo(idx) {
+        current = ((idx % total) + total) % total;
+        slides.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      carousel.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); goTo(current - 1); });
+      carousel.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); goTo(current + 1); });
+
+      let startX = 0;
+      carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      carousel.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+      }, { passive: true });
+    });
   })();
 
   /* RELÓGIO RJ */
