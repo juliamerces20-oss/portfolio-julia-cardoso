@@ -442,7 +442,9 @@
   .reel-client { display: none; }
 
   /* ===== POSTS (4 itens: 2x2) ===== */
-  .posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 24px; }
+  .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  @media (max-width: 860px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .posts-grid { grid-template-columns: 1fr; } }
   .post-card { display: flex; flex-direction: column; gap: 12px; transition: transform 0.3s ease; }
   .post-card:hover { transform: translateY(-4px); }
   .post-frame { width: 100%; aspect-ratio: 1080 / 1444; background: #C8C3B8; position: relative; overflow: hidden; }
@@ -928,6 +930,39 @@
         </div>
         <div class="post-info">
           <div class="post-info-title">@dra.carumoreno · Carrossel</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <img src="assets/posts/post-05_1.jpg" alt="Post @juliacardoso.dsgn" loading="lazy" />
+          <span class="post-frame-meta">FEED</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">@juliacardoso.dsgn · Feed</div>
+        </div>
+      </div>
+
+      <div class="post-card reveal" data-cursor="hover">
+        <div class="post-frame">
+          <div class="post-carousel">
+            <div class="post-carousel-slides">
+              <div class="post-carousel-slide"><img src="assets/posts/post-06_1.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-06_2.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-06_3.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-06_4.jpg" alt="" loading="lazy" /></div>
+              <div class="post-carousel-slide"><img src="assets/posts/post-06_5.jpg" alt="" loading="lazy" /></div>
+            </div>
+            <button class="post-carousel-btn prev" aria-label="Anterior"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <button class="post-carousel-btn next" aria-label="Próximo"><svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+            <div class="post-carousel-dots">
+              <div class="post-carousel-dot active"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div><div class="post-carousel-dot"></div>
+            </div>
+          </div>
+          <span class="post-frame-meta">CARROSSEL · 5</span>
+        </div>
+        <div class="post-info">
+          <div class="post-info-title">@juliacardoso.dsgn · Carrossel</div>
         </div>
       </div>
 
