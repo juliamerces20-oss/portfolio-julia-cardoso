@@ -20,8 +20,6 @@ jobs:
           node-version: '24'
 
       - name: Gerar post
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node generate-post.js
 
       - name: Commit e push
