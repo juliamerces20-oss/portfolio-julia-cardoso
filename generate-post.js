@@ -2,10 +2,24 @@
 // Uso: ANTHROPIC_API_KEY=sk-... node generate-post.js
 
 import fs from 'fs';
+import { mkdirSync, existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// ─── Checagem de ambiente ────────────────────────────────────────────────────
+
+console.log("API Key presente:", !!process.env.ANTHROPIC_API_KEY);
+if (!process.env.ANTHROPIC_API_KEY) {
+  console.error("ERRO: ANTHROPIC_API_KEY não encontrada");
+  process.exit(1);
+}
+
+if (typeof fetch === 'undefined') {
+  console.error("ERRO: fetch não disponível neste ambiente Node");
+  process.exit(1);
+}
 
 // ─── Configuração ────────────────────────────────────────────────────────────
 
@@ -107,10 +121,6 @@ function categoryToFilter(cat) {
 
 async function gerarConteudo(tema, dataHoje) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    console.error('ERRO: variável ANTHROPIC_API_KEY não definida.');
-    process.exit(1);
-  }
 
   console.log(`Chamando API Claude para o tema: "${tema}"...`);
 
@@ -141,15 +151,15 @@ async function gerarConteudo(tema, dataHoje) {
   }
 
   const data = await response.json();
-  const raw = data.content?.[0]?.text;
+  const rawText = data.content?.[0]?.text;
 
-  if (!raw) {
+  if (!rawText) {
     console.error('ERRO: resposta vazia da API Claude.');
     process.exit(1);
   }
 
   // Remove possível markdown fence ```json ... ```
-  const clean = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/, '').trim();
+  const clean = rawText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
 
   let post;
   try {
@@ -411,44 +421,50 @@ function atualizarSitemap(post, date) {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const hoje = new Date();
-  const diaDoAno = getDayOfYear(hoje);
-  const tema = TEMAS[diaDoAno % TEMAS.length];
-  const dataHoje = formatDateShort(hoje);
+  try {
+    const hoje = new Date();
+    const diaDoAno = getDayOfYear(hoje);
+    const tema = TEMAS[diaDoAno % TEMAS.length];
+    const dataHoje = formatDateShort(hoje);
 
-  console.log(`Data: ${dataHoje}`);
-  console.log(`Dia do ano: ${diaDoAno}`);
-  console.log(`Tema selecionado: "${tema}"`);
+    console.log(`Data: ${dataHoje}`);
+    console.log(`Dia do ano: ${diaDoAno}`);
+    console.log(`Tema selecionado: "${tema}"`);
 
-  // Gera conteúdo via API
-  const post = await gerarConteudo(tema, dataHoje);
-  console.log(`Post gerado: "${post.title}" (slug: ${post.slug})`);
+    // Garante que a pasta blog existe
+    const blogDir = path.join(__dirname, 'blog');
+    if (!existsSync(blogDir)) mkdirSync(blogDir, { recursive: true });
 
-  // Descobre o número do próximo post
-  const blogDir = path.join(__dirname, 'blog');
-  const existentes = fs.readdirSync(blogDir).filter(f => f.startsWith('post-') && f.endsWith('.html'));
-  const postNumber = existentes.length + 1;
+    // Gera conteúdo via API
+    const post = await gerarConteudo(tema, dataHoje);
+    console.log(`Post gerado: "${post.title}" (slug: ${post.slug})`);
 
-  // Salva o arquivo HTML do post
-  const fileName = `${post.slug}.html`;
-  const destPath = path.join(blogDir, fileName);
+    // Descobre o número do próximo post
+    const existentes = fs.readdirSync(blogDir).filter(f => f.startsWith('post-') && f.endsWith('.html'));
+    const postNumber = existentes.length + 1;
 
-  if (fs.existsSync(destPath)) {
-    console.warn(`AVISO: arquivo ${fileName} já existe. Sobrescrevendo.`);
+    // Salva o arquivo HTML do post
+    const fileName = `${post.slug}.html`;
+    const destPath = path.join(blogDir, fileName);
+
+    if (fs.existsSync(destPath)) {
+      console.warn(`AVISO: arquivo ${fileName} já existe. Sobrescrevendo.`);
+    }
+
+    const html = gerarHTML(post, hoje, postNumber);
+    fs.writeFileSync(destPath, html, 'utf-8');
+    console.log(`Post salvo em blog/${fileName}`);
+
+    // Atualiza índice e sitemap
+    atualizarBlogIndex(post, hoje, postNumber);
+    atualizarSitemap(post, hoje);
+
+    console.log('Concluído.');
+  } catch (error) {
+    console.error("ERRO COMPLETO:", error);
+    console.error("Stack:", error.stack);
+    process.exit(1);
   }
-
-  const html = gerarHTML(post, hoje, postNumber);
-  fs.writeFileSync(destPath, html, 'utf-8');
-  console.log(`Post salvo em blog/${fileName}`);
-
-  // Atualiza índice e sitemap
-  atualizarBlogIndex(post, hoje, postNumber);
-  atualizarSitemap(post, hoje);
-
-  console.log('Concluído.');
 }
 
-main().catch(err => {
-  console.error('ERRO inesperado:', err);
-  process.exit(1);
-});
+main();
