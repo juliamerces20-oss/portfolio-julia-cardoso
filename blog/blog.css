@@ -98,3 +98,78 @@ button { font-family: inherit; background: none; border: none; cursor: none; }
   .footer span, .footer a { font-size: 10px; }
   .crumbs { font-size: 10px; gap: 8px; letter-spacing: 2px; }
 }
+
+/* ===== HAMBURGER MENU ===== */
+.ham-btn {
+  display: none;
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 10001;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.ham-btn span { display: block; width: 22px; height: 2px; background: #000000; transition: background 0.3s ease; }
+.ham-btn.light-bg span { background: #FFFFFF; }
+
+.ham-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  z-index: 10000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ham-overlay.open { display: flex; animation: hamFadeIn 0.25s ease; }
+@keyframes hamFadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+.ham-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: #FFFFFF;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.ham-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.ham-nav a {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-transform: none;
+  cursor: auto;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.ham-nav a:hover, .ham-nav a.active { color: #F00E0E; }
+
+@media (max-width: 767px) {
+  .ham-btn { display: flex; }
+  .nav-links { display: none !important; }
+}
+
+/* ===== TOUCH CURSOR FIX ===== */
+@media (pointer: coarse) {
+  * { cursor: auto !important; }
+  #cursor { display: none !important; }
+}

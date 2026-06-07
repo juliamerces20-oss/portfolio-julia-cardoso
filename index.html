@@ -607,6 +607,85 @@
   }
   @media (max-width: 380px) { .nav-links { gap: 12px; } .nav-links a { font-size: 11px; } .label { letter-spacing: 2px; font-size: 10px; } }
 
+  /* ===== HAMBURGER MENU ===== */
+  .ham-btn {
+    display: none;
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 10001;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .ham-btn span { display: block; width: 22px; height: 2px; background: #FFFFFF; transition: background 0.3s ease; }
+  .ham-btn.on-light span { background: #000000; }
+  .ham-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 10000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ham-overlay.open { display: flex; animation: hamFadeIn 0.25s ease; }
+  @keyframes hamFadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+  .ham-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: #FFFFFF;
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+  }
+  .ham-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .ham-nav a {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-transform: none;
+    letter-spacing: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .ham-nav a:hover, .ham-nav a.active { color: #F00E0E; }
+  @media (max-width: 767px) {
+    .ham-btn { display: flex; }
+    .nav-links { display: none !important; }
+    .reels-grid {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      gap: 12px;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .reels-grid::-webkit-scrollbar { display: none; }
+    .reel-card { flex: 0 0 auto; min-width: 260px; scroll-snap-align: start; transform: none !important; }
+    .reel-card:nth-child(1), .reel-card:nth-child(2), .reel-card:nth-child(3),
+    .reel-card:nth-child(4), .reel-card:nth-child(5) { grid-column: auto; }
+    .post-carousel-btn { width: 44px; height: 44px; }
+  }
+  @media (pointer: coarse) { * { cursor: auto !important; } #cursor { display: none !important; } }
+
   /* ===== LIGHTBOX ===== */
   .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 9999; justify-content: center; align-items: center; padding: 24px; }
   .lightbox-overlay.active { display: flex; }
@@ -620,6 +699,22 @@
 <body>
 
 <div id="cursor"></div>
+
+<button class="ham-btn" id="hamBtn" aria-label="Abrir menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+<div class="ham-overlay" id="hamOverlay">
+  <button class="ham-close" id="hamClose" aria-label="Fechar menu">✕</button>
+  <nav class="ham-nav">
+    <a href="#trabalhos">trabalhos</a>
+    <a href="#reels">reels</a>
+    <a href="#posts">posts</a>
+    <a href="#sistemas">ia</a>
+    <a href="#diario">diário</a>
+    <a href="info.html">info</a>
+    <a href="#contato">contato</a>
+  </nav>
+</div>
 
 <nav class="nav" id="nav">
   <div class="nav-links">
@@ -1155,13 +1250,30 @@
   (function() {
     const nav = document.getElementById('nav');
     const hero = document.getElementById('hero');
+    const hamBtn = document.getElementById('hamBtn');
     if (!nav) return;
     const onScroll = () => {
       const threshold = hero ? hero.offsetHeight * 0.85 : window.innerHeight;
-      nav.classList.toggle('on-light', window.scrollY > threshold);
+      const isLight = window.scrollY > threshold;
+      nav.classList.toggle('on-light', isLight);
+      if (hamBtn) hamBtn.classList.toggle('on-light', isLight);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  /* HAMBURGER MENU */
+  (function() {
+    const btn = document.getElementById('hamBtn');
+    const overlay = document.getElementById('hamOverlay');
+    const closeBtn = document.getElementById('hamClose');
+    if (!btn || !overlay) return;
+    const openMenu = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; btn.setAttribute('aria-expanded', 'true'); };
+    const closeMenu = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   })();
 
   /* REVEAL */

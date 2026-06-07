@@ -70,10 +70,89 @@
     .intro, .data-section, .closing, .cta, .footer { padding-left: 20px; padding-right: 20px; }
     .footer-bottom { flex-direction: column; }
   }
+
+  /* ===== HAMBURGER MENU ===== */
+  .ham-btn {
+    display: none;
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 10001;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .ham-btn span { display: block; width: 22px; height: 2px; background: #000000; }
+  .ham-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 10000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ham-overlay.open { display: flex; animation: hamFadeIn 0.25s ease; }
+  @keyframes hamFadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+  .ham-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: #FFFFFF;
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+  }
+  .ham-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+  .ham-nav a {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-transform: none;
+    letter-spacing: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .ham-nav a:hover, .ham-nav a.active { color: #F00E0E; }
+  @media (max-width: 767px) {
+    .ham-btn { display: flex; }
+    .nav-links { display: none !important; }
+  }
+  @media (pointer: coarse) { * { cursor: auto !important; } #cursor { display: none !important; } }
 </style>
 </head>
 <body>
 <div id="cursor"></div>
+
+<button class="ham-btn" id="hamBtn" aria-label="Abrir menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+<div class="ham-overlay" id="hamOverlay">
+  <button class="ham-close" id="hamClose" aria-label="Fechar menu">✕</button>
+  <nav class="ham-nav">
+    <a href="index.html#trabalhos">trabalhos</a>
+    <a href="index.html#reels">reels</a>
+    <a href="index.html#posts">posts</a>
+    <a href="index.html#sistemas">ia</a>
+    <a href="index.html#diario">diário</a>
+    <a href="info.html" class="active">info</a>
+    <a href="index.html#contato">contato</a>
+  </nav>
+</div>
 
 <nav class="nav" id="nav">
   <div class="nav-links">
@@ -183,6 +262,20 @@
       el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
+  })();
+
+  /* HAMBURGER MENU */
+  (function() {
+    const btn = document.getElementById('hamBtn');
+    const overlay = document.getElementById('hamOverlay');
+    const closeBtn = document.getElementById('hamClose');
+    if (!btn || !overlay) return;
+    const openMenu = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; btn.setAttribute('aria-expanded', 'true'); };
+    const closeMenu = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; btn.setAttribute('aria-expanded', 'false'); };
+    btn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   })();
 </script>
 </body>

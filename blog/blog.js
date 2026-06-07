@@ -68,6 +68,20 @@ document.documentElement.classList.add('js');
   onScroll();
 })();
 
+/* ============== HAMBURGER MENU ============== */
+(function() {
+  const btn = document.getElementById('hamBtn');
+  const overlay = document.getElementById('hamOverlay');
+  const closeBtn = document.getElementById('hamClose');
+  if (!btn || !overlay) return;
+  const openMenu = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; btn.setAttribute('aria-expanded', 'true'); };
+  const closeMenu = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; btn.setAttribute('aria-expanded', 'false'); };
+  btn.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
+
 /* ============== CATEGORY FILTER (index only) ============== */
 (function() {
   const filters = document.querySelectorAll('[data-filter]');
