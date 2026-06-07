@@ -345,9 +345,12 @@
   .service-arrow { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 24px; color: rgba(0,0,0,0.3); text-align: right; transition: color 0.2s ease, transform 0.2s ease; }
 
   /* ===== CASES ===== */
-  .cases { background: #FFFFFF; padding: 140px 48px 160px; }
-  .cases-inner { max-width: 1600px; margin: 0 auto; }
-  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px 32px; }
+  .cases { background: #FFFFFF; padding: 140px 0 160px; }
+  .cases-inner { max-width: none; margin: 0; }
+  .cases .section-header { padding: 0 48px; }
+  .cases .section-title { padding: 0 48px; }
+  .cases .case-caption { padding: 0 12px; }
+  .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .case { display: flex; flex-direction: column; gap: 20px; }
   .case-mockup {
     background: #C8C3B8; width: 100%; aspect-ratio: 4 / 3;
@@ -502,7 +505,10 @@
   .post-carousel-dot.active { background: #F00E0E; }
 
   /* ===== AI SYSTEMS (2 itens: side by side) ===== */
-  .systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 24px; }
+  #sistemas { padding-left: 0; padding-right: 0; }
+  #sistemas .work-section-inner { max-width: none; margin: 0; }
+  #sistemas .section-header { padding: 0 48px; }
+  .systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
   .system-card { display: flex; flex-direction: column; gap: 24px; padding: 32px; border: 1px solid #C8C3B8; background: #FFFFFF; transition: border-color 0.3s ease, background 0.3s ease; position: relative; }
   .system-card:hover { border-color: #F00E0E; background: rgba(240,14,14,0.01); }
   .system-card:hover .system-card-title { color: #F00E0E; }
@@ -574,7 +580,7 @@
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1200px) {
     .nav { padding: 24px 32px; } .nav.on-light { padding: 16px 32px; }
-    .positioning, .services, .cases, .cta { padding-left: 32px; padding-right: 32px; }
+    .positioning, .services, .cta { padding-left: 32px; padding-right: 32px; }
     .footer { padding: 28px 32px; }
     .service { grid-template-columns: 60px 1fr 1fr 40px; gap: 24px; }
   }
@@ -583,7 +589,7 @@
     .positioning-inner { grid-template-columns: 1fr; gap: 28px; }
     .positioning-left { position: static; } .positioning-body { margin-top: 32px; max-width: 100%; }
     .services { padding-top: 120px; padding-bottom: 120px; }
-    .cases { padding-top: 120px; padding-bottom: 140px; } .cases-grid { gap: 64px 24px; }
+    .cases { padding-top: 120px; padding-bottom: 140px; } .cases-grid { gap: 12px; }
     .about { grid-template-columns: 1fr; min-height: 0; }
     .about-left, .about-right { padding: 96px 32px; } .about-right { min-height: 60vh; }
     .cta { padding: 140px 32px; } .section-header { margin-bottom: 64px; }
@@ -600,7 +606,8 @@
     .services { padding: 88px 20px; } .section-header { margin-bottom: 48px; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
     .service { grid-template-columns: 36px 1fr; grid-template-areas: "num name" "num desc"; column-gap: 16px; row-gap: 6px; padding: 24px 0; }
     .service:hover { padding-left: 16px; } .service-num { grid-area: num; padding-top: 6px; } .service-name { grid-area: name; } .service-desc { grid-area: desc; max-width: 100%; } .service-arrow { display: none; }
-    .cases { padding: 88px 20px 112px; } .cases-grid { grid-template-columns: 1fr; gap: 56px; } .case-mockup { aspect-ratio: 4/3; }
+    .cases { padding: 88px 0 112px; } .cases .section-header { padding: 0 20px; } .cases .section-title { padding: 0 20px; } .cases .case-caption { padding: 0 16px; } .cases-grid { grid-template-columns: 1fr; gap: 12px; } .case-mockup { aspect-ratio: 4/3; }
+    #sistemas .section-header { padding: 0 20px; }
     .about-left, .about-right { padding: 80px 20px; } .about-body { font-size: 15px; max-width: 100%; } .about-tag { font-size: 10px; padding: 7px 12px; }
     .cta { padding: 112px 20px; } .cta-button { margin-top: 56px; padding: 18px 32px; font-size: 12px; letter-spacing: 2px; }
     .footer { padding: 72px 20px 24px; }
