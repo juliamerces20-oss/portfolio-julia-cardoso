@@ -316,6 +316,31 @@
     font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.6);
   }
 
+  /* ===== CURSO ===== */
+  .curso { background: #FFFFFF; padding: 140px 48px; border-top: 1px solid rgba(0,0,0,0.06); }
+  .curso-inner { max-width: 1600px; margin: 0 auto; }
+  .curso-grid { display: grid; grid-template-columns: 55% 45%; gap: 48px; align-items: stretch; }
+  .curso-left { display: flex; flex-direction: column; justify-content: flex-start; gap: 24px; }
+  .curso-title { font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.95; letter-spacing: -0.03em; color: #000000; }
+  .curso-subtitle { font-family: 'Satoshi', sans-serif; font-weight: 500; font-size: 20px; color: #F00E0E; }
+  .curso-desc { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: #000000; max-width: 480px; }
+  .curso-tags { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 13px; color: #C8C3B8; }
+  .curso-button { align-self: flex-start; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; background: #F00E0E; color: #FFFFFF; font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; padding: 16px 40px; border-radius: 0; transition: background 0.25s ease; margin-top: 8px; }
+  .curso-button:hover { background: #000000; }
+  .curso-right { background: #000000; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; }
+  .curso-list { list-style: none; margin: 0; padding: 0; }
+  .curso-list li { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 15px; line-height: 2.2; color: #FFFFFF; }
+  .curso-list li span { color: #F00E0E; margin-right: 10px; }
+  .curso-price-block { margin-top: 40px; }
+  .curso-price { font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 36px; color: #FFFFFF; }
+  .curso-price-sub { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 14px; color: #C8C3B8; margin-top: 4px; }
+  @media (max-width: 960px) {
+    .curso { padding: 88px 20px; }
+    .curso-grid { grid-template-columns: 1fr; gap: 32px; }
+    .curso-title { font-size: 36px; }
+    .curso-button { width: 100%; }
+  }
+
   /* ===== SERVICES ===== */
   .services { background: rgba(200,195,184,0.12); padding: 140px 48px; }
   .services-inner { max-width: 1600px; margin: 0 auto; }
@@ -719,6 +744,7 @@
     <a href="#reels">reels</a>
     <a href="#posts">posts</a>
     <a href="#sistemas">ia</a>
+    <a href="#curso">curso</a>
     <a href="#diario">diário</a>
     <a href="info.html">info</a>
     <a href="#contato">contato</a>
@@ -731,6 +757,7 @@
     <a href="#reels" data-cursor="hover">reels</a>
     <a href="#posts" data-cursor="hover">posts</a>
     <a href="#sistemas" data-cursor="hover">ia</a>
+    <a href="#curso" data-cursor="hover">curso</a>
     <a href="#diario" data-cursor="hover">diário</a>
     <a href="info.html" data-cursor="hover">info</a>
     <a href="#contato" data-cursor="hover">contato</a>
@@ -1124,10 +1151,42 @@
   </div>
 </section>
 
-<section class="positioning" data-screen-label="08 Quem sou">
+<section class="curso" id="curso" data-screen-label="08 Curso">
+  <div class="curso-inner">
+    <div class="section-header">
+      <div class="section-num reveal">008 EDUCAÇÃO</div>
+    </div>
+    <div class="curso-grid">
+      <div class="curso-left reveal">
+        <h2 class="curso-title">NO CORTE</h2>
+        <p class="curso-subtitle">Edite com sentido.</p>
+        <p class="curso-desc">Curso de edição no CapCut Mobile. Aprenda a transformar qualquer vídeo em narrativa com ritmo, identidade e intenção. 100% no celular, sem enrolação. 6 aulas + bônus exclusivo.</p>
+        <p class="curso-tags">CapCut Mobile · Edição de Vídeo · Narrativa Visual · 100% Mobile</p>
+        <a href="https://nocorte.vercel.app/" target="_blank" rel="noopener" class="curso-button" data-cursor="hover">VER CURSO →</a>
+      </div>
+      <div class="curso-right reveal">
+        <ul class="curso-list">
+          <li><span>✱</span>Narrativa Visual</li>
+          <li><span>✱</span>Ritmo e Pacing</li>
+          <li><span>✱</span>Design de Áudio</li>
+          <li><span>✱</span>Cor e Identidade Visual</li>
+          <li><span>✱</span>Finalização e Entrega</li>
+          <li><span>✱</span>Do Celular para a Tela</li>
+          <li><span>✱</span>Bônus: Estilo Autoral</li>
+        </ul>
+        <div class="curso-price-block">
+          <div class="curso-price">R$ 97</div>
+          <div class="curso-price-sub">ou 5x de R$ 19,90</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="positioning" data-screen-label="09 Quem sou">
   <div class="positioning-inner">
     <div class="positioning-header reveal">
-      <div class="positioning-num">008 QUEM SOU</div>
+      <div class="positioning-num">009 QUEM SOU</div>
     </div>
     <div class="positioning-left reveal">
       <figure class="positioning-portrait">
@@ -1145,11 +1204,11 @@
   </div>
 </section>
 
-<section class="diario" id="diario" data-screen-label="09 Diário">
+<section class="diario" id="diario" data-screen-label="10 Diário">
   <div class="diario-inner">
     <div class="diario-header">
       <div class="diario-title-wrap">
-        <div class="section-num reveal" style="padding-bottom: 18px;">009 DIÁRIO</div>
+        <div class="section-num reveal" style="padding-bottom: 18px;">010 DIÁRIO</div>
         <h2 class="section-title reveal">DIÁRIO</h2>
       </div>
       <a href="blog/index.html" class="diario-all reveal" data-cursor="hover">VER TODOS OS POSTS <span>→</span></a>
@@ -1392,5 +1451,9 @@
   })();
 </script>
 
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
