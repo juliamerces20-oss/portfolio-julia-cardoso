@@ -347,8 +347,21 @@
   }
   .curso-inner { max-width: 1600px; margin: 0 auto; position: relative; z-index: 1; }
   .secao-no-corte .section-num { color: var(--nc-orange); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.15em; }
-  .curso-grid { display: grid; grid-template-columns: 55% 45%; gap: 48px; align-items: stretch; }
+  .curso-grid { display: grid; grid-template-columns: 40% 22% 38%; gap: 40px; align-items: stretch; }
   .curso-left { display: flex; flex-direction: column; justify-content: flex-start; gap: 24px; }
+  .curso-photo { position: relative; }
+  .curso-photo img {
+    width: 100%; height: 100%; min-height: 320px;
+    object-fit: cover; display: block;
+    border: 1px solid var(--nc-border); border-radius: 12px !important;
+    filter: contrast(1.02) saturate(1.05);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(255,106,26,0.18);
+  }
+  .curso-photo::after {
+    content: ""; position: absolute; inset: -8px -8px auto auto;
+    width: 64px; height: 64px; border: 2px solid var(--nc-orange);
+    pointer-events: none;
+  }
   .curso-title { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.92; letter-spacing: -0.035em; color: var(--nc-text); }
   .curso-subtitle { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--nc-orange); }
   .curso-desc { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--nc-text-dim); max-width: 480px; }
@@ -379,6 +392,9 @@
   @media (max-width: 960px) {
     .secao-no-corte { padding: 88px 20px; }
     .curso-grid { grid-template-columns: 1fr; gap: 32px; }
+    .curso-photo { order: 2; }
+    .curso-photo img { min-height: 0; aspect-ratio: 4 / 5; }
+    .curso-right { order: 3; }
     .curso-title { font-size: 36px; }
     .curso-button { width: 100%; }
   }
@@ -1206,6 +1222,9 @@
         <p class="curso-tags">CapCut Mobile · Edição de Vídeo · Narrativa Visual · 100% Mobile</p>
         <a href="https://nocorte.vercel.app/" target="_blank" rel="noopener" class="curso-button" data-cursor="hover">VER CURSO →</a>
       </div>
+      <figure class="curso-photo reveal">
+        <img src="assets/julia-nocorte.png" alt="Júlia Mercês Cardoso, criadora do curso NO CORTE" loading="lazy" />
+      </figure>
       <div class="curso-right reveal">
         <ul class="curso-list">
           <li><span>✱</span>Narrativa Visual</li>
