@@ -1,0 +1,36 @@
+name: SEO Squad Semanal
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+jobs:
+  seo-squad:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Bia sugere temas
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node seo-strategist.js
+
+      - name: Téo escreve e Duda revisa
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node seo-writer.js
+
+      - name: Commit e push
+        run: |
+          git config user.name "Julia SEO Bot"
+          git config user.email "seo-bot@juliacardoso.com.br"
+          git add blog/posts-bank.json docs/
+          git diff --staged --quiet || git commit -m "seo: Bia e Teo - $(date +'%Y-%m-%d')"
+          git push

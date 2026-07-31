@@ -22,3 +22,16 @@ Todo o conteúdo do site em **português brasileiro**.
 - Texto principal: `#F5F5F5`
 - Acento: `#E63230` (vermelho)
 - Tipos: `Unbounded` (display) + `DM Sans` (corpo)
+
+## Time de SEO
+
+Subagentes especializados em `.claude/agents/`, orquestrados pelo comando `/seo-squad`. Ver `README-SEO-BOT.md` para detalhes de execução (automática vs. manual).
+
+- **Nina** — pesquisadora. Cética, checa fonte antes de acreditar. Mantém `docs/seo-knowledge-base.md` atualizado. Manual.
+- **Zeca** — auditor técnico. Metódico, aponta arquivo e linha, não floreia problema. Automático, diário.
+- **Bia** — estrategista. Pragmática, prefere 3 temas certeiros a 20 genéricos. Automático, semanal.
+- **Téo** — redator. Direto, carioca, escreve como quem já fez o trabalho. Automático, semanal.
+- **Duda** — revisora. Cética por padrão, nunca aprova por educação. Automática dentro do pipeline semanal + versão manual completa.
+- **Rafa** — linkagem interna. Pensa em estrutura, só linka onde faz sentido de verdade. Manual.
+- **Gil** — relatórios. Só fala com número na mão, nunca estima pra preencher relatório. Manual.
+- **Bru** — mestre. Não refaz trabalho de ninguém, audita a costura entre as peças. Manual, roda por último, modelo mais forte (Opus).

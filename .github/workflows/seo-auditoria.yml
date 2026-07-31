@@ -1,0 +1,34 @@
+name: Zeca Auditoria Diaria
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Zeca audita o site
+        run: node zeca-auditoria.js
+
+      - name: Criar Issue se houver problema
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Zeca encontrou problemas - ${new Date().toISOString().split('T')[0]}`,
+              body: 'Confira os logs do workflow para o relatório completo.'
+            })
