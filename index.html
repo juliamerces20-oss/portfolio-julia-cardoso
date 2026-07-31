@@ -39,6 +39,9 @@
 
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; cursor: none; }
 
@@ -316,26 +319,65 @@
     font-size: 16px; line-height: 1.65; color: rgba(0,0,0,0.6);
   }
 
-  /* ===== CURSO ===== */
-  .curso { background: #FFFFFF; padding: 140px 48px; border-top: 1px solid rgba(0,0,0,0.06); }
-  .curso-inner { max-width: 1600px; margin: 0 auto; }
+  /* ===== CURSO (NO CORTE — identidade visual própria, escopada) ===== */
+  .secao-no-corte {
+    --nc-bg: #060606;
+    --nc-bg-2: #0C0C0C;
+    --nc-orange: #FF6A1A;
+    --nc-orange-2: #FF8533;
+    --nc-text: #F4EEE6;
+    --nc-text-dim: #9A8F85;
+    --nc-text-mute: #5F554D;
+    --nc-border: rgba(255,106,26,0.22);
+    --nc-border-soft: rgba(255,255,255,0.06);
+    background: var(--nc-bg);
+    padding: 140px 48px;
+    border-top: 1px solid var(--nc-border-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .secao-no-corte::before {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence baseFrequency='0.9' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.42  0 0 0 0 0.1  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/></svg>");
+    mix-blend-mode: overlay;
+    opacity: 0.35;
+    z-index: 0;
+  }
+  .curso-inner { max-width: 1600px; margin: 0 auto; position: relative; z-index: 1; }
+  .secao-no-corte .section-num { color: var(--nc-orange); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.15em; }
   .curso-grid { display: grid; grid-template-columns: 55% 45%; gap: 48px; align-items: stretch; }
   .curso-left { display: flex; flex-direction: column; justify-content: flex-start; gap: 24px; }
-  .curso-title { font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.95; letter-spacing: -0.03em; color: #000000; }
-  .curso-subtitle { font-family: 'Satoshi', sans-serif; font-weight: 500; font-size: 20px; color: #F00E0E; }
-  .curso-desc { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: #000000; max-width: 480px; }
-  .curso-tags { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 13px; color: #C8C3B8; }
-  .curso-button { align-self: flex-start; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; background: #F00E0E; color: #FFFFFF; font-family: 'Satoshi', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; padding: 16px 40px; border-radius: 0; transition: background 0.25s ease; margin-top: 8px; }
-  .curso-button:hover { background: #000000; }
-  .curso-right { background: #000000; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; }
+  .curso-title { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 56px; line-height: 0.92; letter-spacing: -0.035em; color: var(--nc-text); }
+  .curso-subtitle { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--nc-orange); }
+  .curso-desc { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--nc-text-dim); max-width: 480px; }
+  .curso-desc strong { color: var(--nc-text); font-weight: 600; }
+  .curso-tags { font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--nc-text-mute); }
+  .curso-button {
+    align-self: flex-start; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; justify-content: center;
+    background: var(--nc-orange); color: #000000; font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 14px;
+    text-transform: uppercase; letter-spacing: 0.06em; padding: 20px 40px; border-radius: 2px !important;
+    box-shadow: 0 0 40px rgba(255,106,26,0.35);
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.2s ease;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .curso-button:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 0 60px rgba(255,106,26,0.6); }
+  .curso-right {
+    background: var(--nc-bg-2); border: 1px solid var(--nc-border-soft); padding: 48px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: border-color 0.25s ease;
+  }
+  .curso-right:hover { border-color: var(--nc-border); }
   .curso-list { list-style: none; margin: 0; padding: 0; }
-  .curso-list li { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 15px; line-height: 2.2; color: #FFFFFF; }
-  .curso-list li span { color: #F00E0E; margin-right: 10px; }
-  .curso-price-block { margin-top: 40px; }
-  .curso-price { font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 36px; color: #FFFFFF; }
-  .curso-price-sub { font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: 14px; color: #C8C3B8; margin-top: 4px; }
+  .curso-list li { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 15px; line-height: 2.2; color: var(--nc-text); }
+  .curso-list li span { color: var(--nc-orange); margin-right: 10px; }
+  .curso-price-block { margin-top: 40px; border-top: 1px solid var(--nc-border-soft); padding-top: 32px; }
+  .curso-price { font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 40px; letter-spacing: -0.03em; color: var(--nc-orange); filter: drop-shadow(0 0 30px rgba(255,106,26,0.35)); }
+  .curso-price-sub { font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 13px; letter-spacing: 0.04em; color: var(--nc-text-dim); margin-top: 6px; }
   @media (max-width: 960px) {
-    .curso { padding: 88px 20px; }
+    .secao-no-corte { padding: 88px 20px; }
     .curso-grid { grid-template-columns: 1fr; gap: 32px; }
     .curso-title { font-size: 36px; }
     .curso-button { width: 100%; }
@@ -1151,7 +1193,7 @@
   </div>
 </section>
 
-<section class="curso" id="curso" data-screen-label="08 Curso">
+<section class="curso secao-no-corte" id="curso" data-screen-label="08 Curso">
   <div class="curso-inner">
     <div class="section-header">
       <div class="section-num reveal">008 EDUCAÇÃO</div>
