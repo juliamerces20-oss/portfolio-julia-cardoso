@@ -223,6 +223,10 @@ function gerarHTML(post, date, postNumber, category, readTime) {
 </footer>
 
 <script src="blog.js"></script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>`;
 }

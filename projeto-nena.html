@@ -127,8 +127,10 @@
   }
   @media (pointer: coarse) { * { cursor: auto !important; } #cursor { display: none !important; } }
 </style>
+<link rel="stylesheet" href="assets/jc-shell.css" />
 </head>
 <body>
+<script src="assets/jc-shell.js"></script>
 <div id="cursor"></div>
 
 <button class="ham-btn" id="hamBtn" aria-label="Abrir menu" aria-expanded="false">
@@ -244,5 +246,9 @@
     overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   })();
 </script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

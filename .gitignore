@@ -3,3 +3,7 @@ debug/
 
 # macOS
 .DS_Store
+.vercel
+
+# Node
+node_modules/

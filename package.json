@@ -4,5 +4,8 @@
   "type": "module",
   "scripts": {
     "generate-post": "node generate-post.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
