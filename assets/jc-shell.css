@@ -260,3 +260,8 @@ html:not(.js):not(.jc-shell) .reveal { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .jc-shell .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* ===== <picture> ===== */
+/* O wrapper não gera caixa, então o <img> continua sendo filho de layout
+   do mesmo pai que tinha antes e nenhum CSS existente precisa mudar. */
+.jc-shell picture { display: contents; }

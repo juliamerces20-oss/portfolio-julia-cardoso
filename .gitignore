@@ -7,3 +7,6 @@ debug/
 
 # Node
 node_modules/
+
+# Masters de imagem antes da otimização (locais, recuperáveis no histórico do git)
+assets/originais/

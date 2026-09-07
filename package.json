@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate-post": "node generate-post.js"
+    "generate-post": "node generate-post.js",
+    "otimizar-imagens": "node otimizar-imagens.js"
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1"
+    "@vercel/analytics": "^2.0.1",
+    "sharp": "^0.35.4"
   }
 }
